@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root to: "static_pages#root"
-resources :users 
-resources :session
+
+  namespace :api, defaults: { format: :json } do
+    resources :users do 
+      resources :registrations, only: [:index]
+      resources :likes, only: [:index]
+    end
+    resource :session, only: [:create, :destroy]
+    resources :events do
+      resources :registrations, only: [:create]
+      resources :likes, only: [:create]
+    end
+
+    resources :registrations, only: [:destroy]
+    resources :bookmarks, only: [:destroy]
+    resources :categories, only: [:show]
+  end
 end
