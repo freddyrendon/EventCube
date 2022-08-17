@@ -14,7 +14,7 @@ root to: "static_pages#root"
     end
 
     resources :registrations, only: [:destroy]
-    resources :bookmarks, only: [:destroy]
+    resources :likes, only: [:destroy]
     resources :categories, only: [:show]
   end
 end

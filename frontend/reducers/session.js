@@ -1,4 +1,4 @@
-import { stat } from '@babel/core/lib/gensync-utils/fs';
+
 import {
     RECEIVE_CURRENT_USER,
     LOGOUT_CURRENT_USER
