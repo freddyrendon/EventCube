@@ -14,7 +14,7 @@ import NavBarContainer from './nav_bar/nav_bar_container'
 const App = () => (
                 <div className="main-content">
                   <NavBarContainer />
-                      <h1>Event Cube</h1>
+                   
                       <AuthRoute exact path="/login" component={LoginFormContainer} />
                       <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 </div>

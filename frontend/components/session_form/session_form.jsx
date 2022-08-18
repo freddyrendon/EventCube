@@ -11,7 +11,7 @@ import {
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.newState = Object.assign({}, this.props.information)
+        // this.newState = Object.assign({}, this.props.information)
         this.state = this.props.information
         this.handleSubmit = this.handleSubmit.bind(this);
     }

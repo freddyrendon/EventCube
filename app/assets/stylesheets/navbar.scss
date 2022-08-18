@@ -1,0 +1,18 @@
+.navBar {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    height: 69px;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.logo {
+    font-family: Raleway-Black;
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #eb7805;
+}
