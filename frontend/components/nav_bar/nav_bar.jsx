@@ -18,8 +18,9 @@ class navBar extends React.Component {
             <>
                 <div className="navBar">
                     <Link to='/' className="logo" >
-                        event cube
+                        eventcube
                     </Link>
+                    <button>Search Events</button>
                     <Link to="/login" className="signup-login-link">Log in</Link>
                     <Link to="/signup" className="signup-login-link">Sign Up</Link>
                 </div>

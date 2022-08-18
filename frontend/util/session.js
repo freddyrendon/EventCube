@@ -1,17 +1,17 @@
 export const logIn = user => (
  $.ajax({
-    url: '/api/users', 
+    url: '/api/session', 
     method: 'POST', 
     data: { user },
- })   /// method to create a new user
+ })   /// method to signin a user
 ); 
 
 export const signUp = user => (
     $.ajax({
-        url: '/api/session',
+        url: '/api/users',
         method: 'POST',
         data: { user },
-    }) /// method to sign in a user 
+    }) /// method to create a user 
 ); 
 
 export const logOut = () => (
