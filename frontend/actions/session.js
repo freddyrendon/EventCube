@@ -1,7 +1,7 @@
 import {
-    postUser, 
-    postSession,
-    deleteSession
+    logIn, 
+    logOut,
+    signUp
 } from '../util/session';
 
 /// const 
@@ -28,7 +28,7 @@ export const receiveErrors = errors => ({
 //// thunks 
 
 export const signup = user => dispatch => (
-    APIUtil.signup(user).then(user => (
+    signUp(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.responseJSON))
@@ -36,7 +36,7 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => (
-    APIUtil.login(user).then(user => (
+    logIn(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.responseJSON))
@@ -44,7 +44,7 @@ export const login = user => dispatch => (
 );
 
 export const logout = () => dispatch => (
-    APIUtil.logout().then(() => (
+    logOut().then(() => (
         dispatch(logoutCurrentUser())
     ))
 );
