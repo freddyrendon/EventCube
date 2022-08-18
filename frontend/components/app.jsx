@@ -11,14 +11,17 @@ import LoginFormContainer from "./session_form/login_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarContainer from './nav_bar/nav_bar_container'
 
-const App = () => (
-                <div className="main-content">
-                  <NavBarContainer />
-                   
-                      <AuthRoute exact path="/login" component={LoginFormContainer} />
-                      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                </div>
+const App = (props) => {
 
-);
+  return ( <div className="main-content">
+    <NavBarContainer />
+      
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+  </div>
+  
+)};
 
-export default App; 
+
+
+export default App
