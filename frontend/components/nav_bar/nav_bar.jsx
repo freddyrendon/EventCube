@@ -20,7 +20,7 @@ class navBar extends React.Component {
                     <Link to='/' className="logo" >
                         eventcube
                     </Link>
-                    <button>Search Events</button>
+                    <button className='nav_button'>Search Events</button>
                     <Link to="/login" className="signup-login-link">Log in</Link>
                     <Link to="/signup" className="signup-login-link">Sign Up</Link>
                 </div>

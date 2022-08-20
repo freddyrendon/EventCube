@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
                 <>
                     <div className="split right">
                         <p>
-
+                            
                         </p>
                     </div>
                 </>
@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className={"centered"}>
                     <h2>
                         <Link to='/' className={"signin-logo"} >
-                            event cube
+                            eventcube
                         </Link>
                     </h2>
                     <h1>
