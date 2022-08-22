@@ -38,13 +38,16 @@ const Home = () => {
                     <h2>Popular in</h2>
                 </div>
                 <div className="location">
-                    <h2>New York</h2>
+                        <select>
+                            <option value="actual value 1">New York</option>
+                            <option value="actual value 2">Brooklyn</option>
+                            <option value="actual value 3">Queens</option>
+                        </select>
                 </div>
                 </div>
             </div>
                        <div className="tabs-container">
                 <div className="tabs">
-
                     <ul class="tabs-events">
                         <li class="interactive">All</li>
                         <li>For You</li>
@@ -53,6 +56,21 @@ const Home = () => {
                         <li>This Weekend</li>
                     </ul>
                 </div>
+            </div>
+
+            <div className="category-tiles">
+                <h3 class="category-title">Check out trending categories</h3>
+                <div class="tile-group">
+                    <a href="/">Music</a>
+                    <a href="/">Performing & Visual Arts</a>
+                    <a href="/">Travel & Outdoor</a>
+                    <a href="/">Health</a>
+                    <a href="/">Hobbies</a>
+                    <a href="/">Business</a>
+                    <a href="/">Food & Drink</a>
+                    <a href="/">Sports & Fitness</a>
+                </div>
+
             </div>
 
 
