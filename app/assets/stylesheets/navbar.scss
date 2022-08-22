@@ -2,16 +2,16 @@
     display: flex;
     align-items: center;
     font-size: 18px;
-    height: 69px;
+    height: 60px;
     justify-content: space-between;
     background-color: white;
     border-bottom: 1px solid rgb(241, 241, 241);
 }
 
 .logo {
-    font-family: Raleway-Black;
+    font-family:'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 30px;
     margin-left: 10px;
     text-decoration: none;
     color: #F7682F;
@@ -23,3 +23,23 @@
     max-width: 472px;
 
 }
+
+.navbar-search {
+    text-decoration: none;
+    background-color: #f8f7fa;
+    border: 1px solid #f8f7fa;
+    height: 40px;
+    width: 58%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 14px;
+    color: gray;
+    padding-left: 3%;
+    border-radius: 5px;
+}
+
+.navbar-search:hover {
+    cursor: pointer;
+}
+
