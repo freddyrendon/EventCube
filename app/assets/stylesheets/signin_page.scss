@@ -20,7 +20,6 @@
     background-repeat: no-repeat;
     background-position: left bottom;
     background-size: auto 100%;
-    // flex: 1;
     height: 70%;
 }
 
@@ -37,7 +36,6 @@
         font-weight: bold;
         font-size: 36px;
         text-decoration: none;
-        // color: #FAA763 ;
         color: #F7682F;
     }
 }
@@ -52,11 +50,11 @@
     }
 }
 
-// * {
-//     box-sizing: border-box;
-//     // font-family: Raleway-Black;
-//     // background-color: rgb(255, 255, 255);
-// }
+.session-form {
+    box-sizing: border-box;
+    font-family: Raleway-Black;
+    background-color: rgb(255, 255, 255);
+}
 
 .container {
     padding: 16px;
@@ -74,6 +72,8 @@ input[type=password] {
     border-width: 1px;
     border-color: rgb(170, 169, 169);
     border-radius: 10px;
+    box-sizing: border-box;
+
 }
 
 input[type=text]:focus,
@@ -83,11 +83,9 @@ input[type=password]:focus {
 
 form {
     margin-bottom: 25px;
-
 }
 
 .formButton {
-    // background-color: #FAA763 ;
     background-color: #d1410c;
     color: white;
     padding: 16px 20px;
@@ -127,4 +125,16 @@ form {
     top: 10px;
     left: 15px;
     text-transform: uppercase;
+}
+
+
+.Log-in {
+    font-size: 3.25rem;
+    line-height: 4rem;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
 }

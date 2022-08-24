@@ -24,7 +24,7 @@
 #  index_events_on_location     (location)
 #
 class Event < ApplicationRecord
-    validates :event_body, :event_capacity, :event_end_date, :event_end_time, :event_start_date, :event_start_time, :event_title, :location, :category_id, :host_id
+    validates :event_body, :event_capacity, :event_end_date, :event_end_time, :event_start_date, :event_start_time, :event_title, :location, :category_id, :host_id, presence: true
     validates :host_id, uniqueness: true 
 
 
@@ -33,15 +33,15 @@ class Event < ApplicationRecord
     foreign_key: :host_id, 
     class_name: :User
 
-    belongs_to :categorie, 
-    primary_key: :id, 
-    foreign_key: :category_id, 
-    class_name: :Categorie
+    # belongs_to :categorie, 
+    # primary_key: :id, 
+    # foreign_key: :category_id, 
+    # class_name: :Categorie
 
-    has_many :likes, 
-    primary_key: :id, 
-    foreign_key: :event_id, 
-    class_name: :Like
+    # has_many :likes, 
+    # primary_key: :id, 
+    # foreign_key: :event_id, 
+    # class_name: :Like
 
 
 end

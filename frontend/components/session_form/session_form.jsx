@@ -107,16 +107,17 @@ class SessionForm extends React.Component {
         }
 
         return (
-            <div className={"split left container"}>
+            <div className={"split left container session-form"}>
                 <form onSubmit={this.handleSubmit} className={"centered"}>
                     <h2>
                         <Link to='/' className={"signin-logo"} >
                             eventcube
                         </Link>
                     </h2>
-                    <h1>
-                        {formType} or {navLink}
-                    </h1>
+
+                    <h3 className="Log-in">
+                        {formType}
+                    </h3>
                     {this.renderErrors()}
                     <div className={"inputGroup"}>
                         <input
@@ -125,7 +126,7 @@ class SessionForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             className={"formInput"}
-                        />
+                            />
                         <label className={"formInputLabel"}>Email:</label>
                     </div>
                     <br />
@@ -137,7 +138,7 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             className={"formInput"}
-                        />
+                            />
                         <label className="formInputLabel">Password:</label>
                     </div>
                     <br />
@@ -146,10 +147,11 @@ class SessionForm extends React.Component {
                     <br />
                     {formType === 'Log in' ?
                         <button
-                            onClick={this.demoUserSignin(demoUser)}
-                            className={"inputGroup formButton"}
+                        onClick={this.demoUserSignin(demoUser)}
+                        className={"inputGroup formButton"}
                         >Demo User</button> : ''
                     }
+                            {navLink}
 
                 </form>
                 {splitRight()}

@@ -12,8 +12,8 @@ const mSTP = ({ errors }) => ({
         last_name: '',
     },
     errors: errors.session,
-    formType: 'log in',
-    navLink: <Link to="/signup" className="signin-text">sign up instead</Link>,
+    formType: 'Log in',
+    navLink: <Link to="/signup" className="signin-text">sign up</Link>,
 })
 
 const mDTP = dispatch => ({

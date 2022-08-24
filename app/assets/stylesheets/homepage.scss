@@ -1,6 +1,4 @@
-// div {
-//     display: block;
-// }
+
 
 .fullbleed-header {
     min-height: 128px;
@@ -24,10 +22,10 @@
         position: relative;
         background-image: url('eventbrite.jpeg');
         background-size: contain;
-                    background-repeat: no-repeat;
-                    width: 97%;
-                    height: 370px;
-                    // transform:scale(.92) ;
+        background-repeat: no-repeat;
+        width: 97%;
+        height: 370px;
+        // transform:scale(.92) ;
        
 }
 
@@ -38,26 +36,7 @@
 }
 
 .eds-layout {
-    margin-top: 280px;
-        // min-height: 10px;
-//             // display: -webkit-box;
-//             // display: -ms-flexbox;
-//             display: flex;
-//             -webkit-box-orient: vertical;
-//             -webkit-box-direction: normal;
-//             // -ms-flex-direction: column;
-//             flex-direction: column;
-//             -webkit-box-flex: 1;
-//             // -ms-flex: 1 1 auto;
-//             flex: 1 1 auto;
-//             z-index: 10;
-//             -webkit-box-align: stretch;
-//             // -ms-flex-align: stretch;
-//             align-items: stretch;
-//             -webkit-box-pack: center;
-//             // -ms-flex-pack: center;
-//             justify-content: center;
-//             position: relative;
+    margin-top: 420px;
 }
 
 // .eds-layout-body{
@@ -68,14 +47,11 @@
 
 .fullbleed-header{
         padding-top: 40px;
-            padding-bottom: 20px;
-            // display: -webkit-box;
-            // display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            // -ms-flex-direction: column;
-            flex-direction: column;
+        padding-bottom: 20px;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
 
 }
 
@@ -128,13 +104,8 @@
 // }
 
 .banner {
-        // display: flex;
-            // position: relative;
-            // padding: 14px 24px;
-            // -webkit-box-orient: vertical;
-            // -webkit-box-direction: normal;
-            flex-flow: column nowrap;
-            // -webkit-box-align: start;
+    margin-top: 20px;
+    flex-flow: column nowrap;
     border-color:#f05537;
     border-left: 4px solid;
     padding-left: 20px;
@@ -143,11 +114,10 @@
     border-radius: 4px;
     background-color: ffff;
     box-shadow: 0 4px 12px -4px ;
-  
-        
 }
 
 .banner-header {
+        // margin-top: 20px;
     border-color: #f05537;
     font-weight: 700;
     margin-bottom: 8px;
@@ -162,6 +132,7 @@
 }
 
 .location-container {
+        margin-top: 20px;
     display: flex;
     align-items: center;
         padding-left: 50px;
@@ -190,6 +161,7 @@
         line-height: 40px;
 }
 .tabs-container {
+        margin-top: 20px;
     display: flex;
     align-items: center;
     margin-left: 5px;
@@ -230,6 +202,7 @@ li:hover {
 }
 
 .tile-group {
+        margin-top: 20px;
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
@@ -241,12 +214,31 @@ li:hover {
     text-align: center;
     padding: 10px;
     font-size: 20px;
+    text-decoration: none;
 
 }
 
 .category-title {
+    margin-top: 20px;
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: 0.25px;
     margin-left:50px;
+}
+
+.carousel-title {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.25px;
+    margin-left: 50px;
+}
+
+.carousel-body {
+    color: #6f7287;
+    margin-top: 10px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.25px;
+    margin-left: 50px;
 }

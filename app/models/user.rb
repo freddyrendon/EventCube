@@ -59,15 +59,15 @@ class User < ApplicationRecord
 
 
 
-    has_many :events,
-    primary_key: :id, 
-    foreign_key: :host_id, 
-    class_name: :Event
+    # has_many :events,
+    # primary_key: :id, 
+    # foreign_key: :host_id, 
+    # class_name: :Event
 
-    has_many :likes, 
-    primary_key: :id, 
-    foreign_key: :user_id, 
-    class_name: :Like
+    # has_many :likes, 
+    # primary_key: :id, 
+    # foreign_key: :user_id, 
+    # class_name: :Like
 
 
 
