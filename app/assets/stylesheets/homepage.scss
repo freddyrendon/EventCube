@@ -23,7 +23,7 @@
         background-image: url('eventbrite.jpeg');
         background-size: contain;
         background-repeat: no-repeat;
-        width: 98%;
+        width: 99%;
         height: 370px;
         // transform:scale(.92) ;
        
@@ -194,6 +194,8 @@
     white-space: nowrap;
 }
 
+
+
 li:hover {
     cursor: pointer;
 }
@@ -204,9 +206,11 @@ li:hover {
 }
 
 .tile-group {
-        margin-top: 20px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: auto auto auto auto;
+    margin-left: 40px;
+    margin-right: 40px;
     grid-gap: 10px;
     padding: 10px;
 }
