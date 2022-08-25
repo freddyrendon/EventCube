@@ -7,6 +7,8 @@ function EventShow(props) {
     useEffect(() => console.log(props), []);
     useEffect(() => props.fetchEvent(props.event.id), []);
 
+    console.log(props.event.id)
+
 
     return (
         // console.log("hello")

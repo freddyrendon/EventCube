@@ -8,8 +8,9 @@ class Api::EventsController < ApplicationController
     end
 
     def show
-        @event = Event.find_by(id: params[:id])
+        @event = Event.find_by!(id: params[:id])
         render :show
+        # if conditional to render errors 
     end
     
     def create

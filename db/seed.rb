@@ -121,3 +121,6 @@ event9 = Event.create(
                 event_end_date: "2022-09-01",
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00")
+
+
+            ## img filed seed to events 

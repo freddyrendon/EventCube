@@ -1,5 +1,6 @@
 import React from "react"
 import EventIndexContainer from "../events/event_index_container"
+import EventShowContainer from "../events/events_show_container"
 import Footer from "../../footer/footer"
 
 
@@ -10,7 +11,6 @@ const Home = () => {
         <div className="fullbleed-header">
             <div className="eds-layout">
                 <div className="eds-layout-body">
-                    <div className="fullbleed-header">
                         <svg className="home-headertag" xmlns="http://www.w3.org/2000/svg">
                             <p></p>
                             <p></p>
@@ -23,7 +23,6 @@ const Home = () => {
                             <a href="/d"></a>
                             <div className="feed-fullbleed-headertag">
                                 <input className="event-pic-button" type="button" value="Find your next event" href="/"/>
-                                </div>
                         </div>
                         </div>
                     </div>
@@ -32,10 +31,10 @@ const Home = () => {
             </div>
             <div className="banner">
                 <div className="banner-header">Do events help you find connection?</div>
-                <span>
+                <div className="banner-text">
                     Help us understand how attending events contributes to building social connection by taking a short survey before and after
                     your next event. <a target="_blank" href="https://ugeorgia.ca1.qualtrics.com/jfe/form/SV_agHQ1wIV6ExRUwu">Start here</a>
-                    </span>        
+                    </div>        
             </div>
             <div className="home-index-container">
                 <div className="location-container">
