@@ -29,14 +29,14 @@
        
 }
 
-.fullbleed-header {
-        margin-top: 0;
-        padding-left: 16px;
-        padding-right: 16px;
-}
+// .fullbleed-headerr {
+//         margin-top: 0;
+//         padding-left: 16px;
+//         padding-right: 16px;
+// }
 
 .eds-layout {
-    margin-top: 420px;
+    margin-top: 1300px;
 }
 
 // .eds-layout-body{
@@ -60,12 +60,12 @@
     padding-bottom: 50px;
     padding-left: 50px;
 }
-.home-header-text {
-    color: #fff;
-}
-.home-header-text_svg__st0{
-    color: #fff;
-}
+// .home-header-text {
+//     color: #fff;
+// }
+// .home-header-text_svg__st0{
+//     color: #fff;
+// }
 
 // .hidden{
 //         display: block;
@@ -245,6 +245,6 @@ li:hover {
     margin-left: 50px;
 }
 
-// eds-vector-image--ui-orange svg path {
-//     fill: #f05537 !important;
-// }
+eds-vector-image--ui-orange svg path {
+    fill: #f05537 !important;
+}

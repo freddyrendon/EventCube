@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <div className="footer">
             <a href='https://www.linkedin.com/' >
@@ -14,3 +14,5 @@ export const Footer = () => {
         </div>
     )
 };
+
+export default Footer;

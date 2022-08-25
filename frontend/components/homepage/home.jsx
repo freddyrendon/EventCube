@@ -1,5 +1,6 @@
 import React from "react"
 import EventIndexContainer from "../events/event_index_container"
+import Footer from "../../footer/footer"
 
 
 const Home = () => {
@@ -91,7 +92,6 @@ const Home = () => {
 
             <div className="event-container">
 
-                <EventIndexContainer/>
                 <div className="event-content">
                     <div className="carousel-header">
                         <div className="carousel-tile">
@@ -100,7 +100,8 @@ const Home = () => {
                                 <span>
                                     Discover New York's best experiences, hand-picked by pur experts.
                                 </span>
-
+                                <EventIndexContainer/>
+                                <Footer />
                             </div>
                         </div>
 

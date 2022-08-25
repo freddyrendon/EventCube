@@ -15,6 +15,7 @@ function EventIndex(props) {
                 <br />
                  {event.location}
                  <br />
+                 {/* {event.event_body} */}
                 <img className="momo-pic" src="https://www.djtimes.com/wp-content/uploads/2021/08/electric-zoo-music-festival-reveals-set-times-for-2021-dj-times.jpg" alt="" />
             </div>
 
