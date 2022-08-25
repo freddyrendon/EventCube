@@ -1,41 +1,48 @@
 
-export const fetchEvents = () => (
-    $.ajax({
-        method: 'GET',
-        url: '/api/events/'
-    })
-);
-
-export const fetchEvent = eventId => (
-    $.ajax({
-        method: 'GET',
-        url: `api/events/${eventId}`
-    })
-);
-
-export const createEvent = event => {
+export const fetchEvents = () => {
     return $.ajax({
-        method: 'POST',
-        url: '/api/events',
-        data: event,
-        processData: false,
-        contentType: false
+        method: "GET",
+        url: "/api/events",
     })
 };
 
-export const updateEvent = event => (
-    $.ajax({
-        method: 'PATCH',
-        url: `api/events/${event.id}`,
-        data: event,
-        processData: false,
-        contentType: false
+export const fetchEvent = (eventId) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/events/${eventId}`,
     })
-);
+};
 
-export const deleteEvent = eventId => (
-    $.ajax({
+export const createEvent = (event) => {
+    return $.ajax({
+        method: "POST",
+        url: `/api/events`,
+        data: event,
+        contentType: false,
+        processData: false
+    })
+}
+
+export const updateEvent = (formData, eventId) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/events/${eventId}`,
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+}
+
+export const deleteEvent = (eventId) => {
+    return $.ajax({
         method: 'DELETE',
         url: `/api/events/${eventId}`
     })
-);
+}
+
+// export const fetchHostedEvents = (userId) => {
+//     return $.ajax({
+//         method: 'GET',
+//         url: `/api/users/${userId}/events`
+//     })
+// };

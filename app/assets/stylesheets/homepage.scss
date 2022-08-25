@@ -1,7 +1,7 @@
 
 
 .fullbleed-header {
-    min-height: 128px;
+    min-height: 148px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -23,7 +23,7 @@
         background-image: url('eventbrite.jpeg');
         background-size: contain;
         background-repeat: no-repeat;
-        width: 97%;
+        width: 98%;
         height: 370px;
         // transform:scale(.92) ;
        
@@ -55,23 +55,26 @@
 
 }
 
-// .home-headertag{
-//     width: 33%;
-//     padding-bottom: 8px;
-//     border: 2px;
-//     color: red;
-            
-
-// }
-
-.hidden{
-        display: block;
-        margin-block-start: 1px;
-        margin-block-end: 10px;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        color: white;
+.svg-headertag{
+    width: 33%;
+    padding-bottom: 50px;
+    padding-left: 50px;
 }
+.home-header-text {
+    color: #fff;
+}
+.home-header-text_svg__st0{
+    color: #fff;
+}
+
+// .hidden{
+//         display: block;
+//         margin-block-start: 1px;
+//         margin-block-end: 10px;
+//         margin-inline-start: 0px;
+//         margin-inline-end: 0px;
+//         color: white;
+// }
 
 .feed-fullbleed-header-container{
     display: -webkit-inline-box;
@@ -104,10 +107,9 @@
 // }
 
 .banner {
-    margin-top: 20px;
+    margin-top: 5px;
     flex-flow: column nowrap;
-    border-color:#f05537;
-    border-left: 4px solid;
+    border-left: 4px solid #f05537;
     padding-left: 20px;
     margin-left: 20px;
     align-items: flex-start;
@@ -242,3 +244,7 @@ li:hover {
     letter-spacing: 0.25px;
     margin-left: 50px;
 }
+
+// eds-vector-image--ui-orange svg path {
+//     fill: #f05537 !important;
+// }

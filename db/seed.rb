@@ -12,37 +12,76 @@ Event.destroy_all
 demo = User.create(first_name: "demo", last_name: "test", email:"test@aio.com", password:"password")
 freddy = User.create(first_name: "Freddy", last_name: "Rendon", email:"FreddyRendon@aio.com", password:"password")
 
-event1 = Event(
+event1 = Event.create(
                 host_id: 2,
                 category_id: 1,
                 event_capacity: 500,
                 event_title: "Electric Zoo Festival",
                 event_body: "This is the biggest festival of the year in NYC.",
                 location: "Randall's Island Park",
-                event_start_date: 2022-09-02,
-                event_end_date: 2022-09-04,
-                event_start_time: 15:00:00,
-                event_end_time: 23:00:00),
+                event_start_date: "2022-09-02",
+                event_end_date: "2022-09-04",
+                event_start_time: "15:00:00",
+                event_end_time: "23:00:00"),
 
-event2 = Event(
-                id: 2,
+event2 = Event.create(
                 host_id: 1,
-                title: "New York Yankees",
-                description: "Dont miss out on this ultimate rivalry Boston Red Sox vs The New York Yankees",
+                event_capacity: 250,
+                event_title: "New York Yankees",
+                event_body: "Dont miss out on this ultimate rivalry Boston Red Sox vs The New York Yankees",
+                location: "The Bronx, NY",
                 category_id: 2,
-                event_start_date: 2022-09-02,
-                event_end_date: 2022-09-02,
-                event_start_time: 18:00:00,
-                event_end_time: 20:00:00),
+                event_start_date: "2022-09-02",
+                event_end_date: "2022-09-02",
+                event_start_time: "18-00-00",
+                event_end_time: "20-00-00"),
 
             
-event2 = Event(
-                id: 3,
+event3 = Event.create(
                 host_id: 3,
-                title: "Korean BBQ",
-                description: "Bringing an AYCE (All You Can Eat) K-BBQ experience",
+                event_capacity: 100,
+                event_title: "Korean BBQ",
+                event_body: "Bringing an AYCE (All You Can Eat) K-BBQ experience",
+                location: "LIC, Queens",
                 category_id: 3,
-                event_start_date: 2022-09-02,
-                event_end_date: 2022-09-02,
-                event_start_time: 12:00:00,
-                event_end_time: 23:00:00)
+                event_start_date: "2022-09-02",
+                event_end_date: "2022-09-02",
+                event_start_time: "12:00:00",
+                event_end_time: "23:00:00"),
+
+event4 = Event.create(
+                host_id: 4,
+                event_capacity: 300,
+                event_title: "Bad Bunny",
+                event_body: "Picante picante como un habanero!",
+                location: "Queens, NY",
+                category_id: 1,
+                event_start_date: "2022-09-05",
+                event_end_date: "2022-09-05",
+                event_start_time: "12:00:00",
+                event_end_time: "23:00:00"),
+
+event6 = Event.create(
+                host_id: 6,
+                event_capacity: 100,
+                event_title: "230 5th",
+                event_body: "Dance the night away",
+                location: "Manhattan, NY",
+                category_id: 4,
+                event_start_date: "2022-09-12",
+                event_end_date: "2022-09-12",
+                event_start_time: "12:00:00",
+                event_end_time: "23:00:00")
+
+event5 = Event.create(
+                host_id: 5,
+                event_capacity: 100,
+                event_title: "Williamsburg Bites Brooklyn Food Tour",
+                event_body: "xplore and taste your way through Brooklyn",
+                location: "Brooklyn, NY",
+                category_id: 3,
+                event_start_date: "2022-09-12",
+                event_end_date: "2022-09-12",
+                event_start_time: "12:00:00",
+                event_end_time: "23:00:00")
+

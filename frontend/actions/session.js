@@ -36,9 +36,10 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => (
-    logIn(user).then(user => (
+    logIn(user).then(user => { 
+        debugger
         dispatch(receiveCurrentUser(user))
-    ), err => (
+    }, err => (
         dispatch(receiveErrors(err.responseJSON))
     ))
 );

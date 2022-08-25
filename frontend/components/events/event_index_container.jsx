@@ -1,15 +1,17 @@
 import { connect } from "react-redux";
-import { fetchEvents } from "../../action/event_actions";
+import { fetchEvents } from "../../actions/event_action";
 import EventIndex from "./event_index";
 
 
-const mSTP = (state, ownProps) => ({
-    events: Object.values(state.entities.events),
-    currentUser: state.entities.users[state.session.id]
-});
+const mSTP = (state, ownProps) => {
+    // console.log(Object.values(state.entities.events)) 
+        return {
+    events: Object.values(state.entities.events)
+}
+};
 
 const mDTP = dispatch => ({
-    fetchEvents: () => dispatch(fetchEvents()),
+    fetchEvents: () => dispatch(fetchEvents())
 });
 
 export default connect(mSTP, mDTP)(EventIndex);

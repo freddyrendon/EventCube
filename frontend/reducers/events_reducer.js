@@ -1,22 +1,20 @@
-import { CLEAR_EVENTS, RECEIVE_EVENT, RECEIVE_EVENTS, REMOVE_EVENT } from "../actions/event_action";
+import { RECEIVE_EVENT, RECEIVE_EVENTS, REMOVE_EVENT } from "../actions/event_action";
 
-
-const eventsReducer = (state = {}, action) => {
-    Object.freeze(state);
+const EventsReducer = (initialState = {}, action) => {
+    Object.freeze(initialState)
+    // debugger
     switch (action.type) {
         case RECEIVE_EVENTS:
-            return Object.assign({}, state, action.events);
+            return action.events
         case RECEIVE_EVENT:
-            return Object.assign({}, state, { [action.event.id]: action.event });
+            return Object.assign({}, initialState, { [action.event.id]: action.event })
         case REMOVE_EVENT:
-            let newState = Object.assign({}, state);
-            delete newState[action.eventId];
-            return newState;
-        case CLEAR_EVENTS:
-            return {};
+            let newState = Object.assign({}, initialState)
+            delete newState[action.eventId]
+            return newState
         default:
-            return state;
+            return initialState
     }
 }
 
-export default eventsReducer;
+export default EventsReducer

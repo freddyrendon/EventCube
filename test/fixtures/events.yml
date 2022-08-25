@@ -5,10 +5,10 @@
 #  id               :bigint           not null, primary key
 #  event_body       :text             not null
 #  event_capacity   :integer          not null
-#  event_end_date   :date             not null
-#  event_end_time   :time             not null
-#  event_start_date :date             not null
-#  event_start_time :time             not null
+#  event_end_date   :string
+#  event_end_time   :string
+#  event_start_date :string
+#  event_start_time :string
 #  event_title      :string           not null
 #  location         :string           not null
 #  created_at       :datetime         not null

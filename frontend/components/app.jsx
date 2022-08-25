@@ -10,8 +10,14 @@ import SignupFormContainer from "./session_form/signup_contain";
 import LoginFormContainer from "./session_form/login_form_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarContainer from './nav_bar/nav_bar_container'
-import { Footer } from "../footer/footer";
+import EventIndexContainer from "./events/event_index_container"
+
+// import { Footer } from "../footer/footer";
 import Home from "./homepage/home";
+
+
+// index is /events 
+// show is /events/:eventid
 
 const App = (props) => {
 
@@ -20,13 +26,10 @@ const App = (props) => {
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/" component={Home} />
+        {/* <Route path="/events" component={EventIndexContainer} /> */}
       </Switch>
-      <Route exact path="/" component={Home} />
-  </div>
-  
-  
+  </div>  
 )};
-
-
 
 export default App

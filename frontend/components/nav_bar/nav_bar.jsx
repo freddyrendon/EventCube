@@ -23,11 +23,18 @@ class navBar extends React.Component {
                         eventcube
                     </Link>
                     <input className="navbar-search" type="search" placeholder="Search Events"/>
+                    {
+                        currentUser ? `Welcome ${currentUser.email}` : 
+                        <>
                     <Link to="/login" className="signup-login-link">Log in</Link>
                     <Link to="/signup" className="signup-login-link">Sign Up</Link>
+                        </>
+                    }
                 </div>
             </>
         )
+
+
         // const personalGreeting = () => ( // can have this render splash page component instead
         //     <>
         //         <div className="navBar">
@@ -73,7 +80,7 @@ class navBar extends React.Component {
 
         return (
             <>
-                {currentUser ? personalGreeting() : sessionLinks()}
+                {sessionLinks()}
             </>
         )
     }

@@ -14,7 +14,7 @@
 #  index_registrations_on_user_id   (user_id)
 #
 class Registration < ApplicationRecord
-    validates :event_id, :user_id, presence: true 
+    # validates :event_id, :user_id, presence: true 
     
 
 end

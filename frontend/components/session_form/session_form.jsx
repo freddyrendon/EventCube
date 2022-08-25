@@ -25,8 +25,9 @@ class SessionForm extends React.Component {
     demoUserSignin(demoUser) {
         return e => {
             e.preventDefault();
+            // console.log("hello")
             this.props.processForm(demoUser)
-            // this.props.history.push(`/`)
+            this.props.history.push(`/`)
         }
     }
 

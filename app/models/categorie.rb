@@ -8,11 +8,11 @@
 #  updated_at :datetime         not null
 #
 class Categorie < ApplicationRecord
-    validates :title, presence: true 
+    # validates :title, presence: true 
 
-    has_many :categories,
-    primary_key: :id, 
-    foreign_key: :category_id, 
-    class_name: :Event
+    # has_many :categories,
+    # primary_key: :id, 
+    # foreign_key: :category_id, 
+    # class_name: :Event
 
 end

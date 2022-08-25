@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_18_222347) do
+ActiveRecord::Schema.define(version: 2022_08_24_200530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2022_08_18_222347) do
     t.string "event_title", null: false
     t.text "event_body", null: false
     t.string "location", null: false
-    t.date "event_start_date", null: false
-    t.date "event_end_date", null: false
-    t.time "event_start_time", null: false
-    t.time "event_end_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "event_start_date"
+    t.string "event_end_date"
+    t.string "event_start_time"
+    t.string "event_end_time"
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["event_title"], name: "index_events_on_event_title"
     t.index ["host_id"], name: "index_events_on_host_id", unique: true
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2022_08_18_222347) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: truec
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 

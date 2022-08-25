@@ -6,7 +6,6 @@ class Api::SessionsController < ApplicationController
       )
       # debugger
       if @user
-
         login(@user)
         render "api/users/show"
       else
