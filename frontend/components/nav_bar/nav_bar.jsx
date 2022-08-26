@@ -11,6 +11,9 @@ class navBar extends React.Component {
     }
 
 
+    /// onclick redirct to /events 
+
+
     render() {
 
 
@@ -22,7 +25,7 @@ class navBar extends React.Component {
                     <Link to='/' className="logo" >
                         eventcube
                     </Link>
-                    <input className="navbar-search" type="search" placeholder="Search Events"/>
+                    <input className="navbar-search" type="search" placeholder="Search Events" onClick={() => { window.location.href = `/#/events` }} />
                     {
                         currentUser ? `Welcome ${currentUser.email}` : 
                         <>

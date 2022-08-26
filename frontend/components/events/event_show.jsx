@@ -41,9 +41,9 @@ function EventShow(props) {
 
                                 </div>
                                 <div className="events-capacity">
-                                    Capacity
+                                    {/* Capacity */}
                                     <br />
-                                    {props.event.event_capacity}
+                                    {/* {props.event.event_capacity} */}
                                 </div>
                                 <div className="event-show-details">
                                     <div className="details-column">
