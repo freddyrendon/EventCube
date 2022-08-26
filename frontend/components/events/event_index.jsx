@@ -32,7 +32,6 @@ function EventIndex(props) {
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
                     <div className="default-wrappa">
-
                         {events}
                     </div>
                 </div>

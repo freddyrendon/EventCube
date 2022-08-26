@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
 Event.destroy_all
+User.destroy_all
 
-demo = User.create(first_name: "demo", last_name: "test", email:"test@aio.com", password:"password")
-freddy = User.create(first_name: "Freddy", last_name: "Rendon", email:"FreddyRendon@aio.com", password:"password")
+demo = User.create!(first_name: "demo", last_name: "test", email:"test@aio.com", password:"password")
+freddy = User.create!(first_name: "Freddy", last_name: "Rendon", email:"FreddyRendon@aio.com", password:"password")
 
-event1 = Event.create(
+Event.create!(
                 host_id: 2,
                 category_id: 1,
                 event_capacity: 500,
@@ -24,7 +24,7 @@ event1 = Event.create(
                 event_start_time: "15:00:00",
                 event_end_time: "23:00:00"),
 
-event2 = Event.create(
+Event.create!(
                 host_id: 1,
                 event_capacity: 250,
                 event_title: "New York Yankees",
@@ -37,7 +37,7 @@ event2 = Event.create(
                 event_end_time: "20-00-00"),
 
             
-event3 = Event.create(
+Event.create!(
                 host_id: 3,
                 event_capacity: 100,
                 event_title: "Wonder Pig Korean BBQ",
@@ -49,7 +49,7 @@ event3 = Event.create(
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00"),
 
-event4 = Event.create(
+Event.create!(
                 host_id: 4,
                 event_capacity: 300,
                 event_title: "Bad Bunny Baby",
@@ -61,7 +61,7 @@ event4 = Event.create(
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00"),
 
-event6 = Event.create(
+Event.create!(
                 host_id: 6,
                 event_capacity: 100,
                 event_title: "230 5th rooftop",
@@ -73,7 +73,7 @@ event6 = Event.create(
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00")
 
-event5 = Event.create(
+Event.create!(
                 host_id: 5,
                 event_capacity: 100,
                 event_title: "Williamsburg Bites Brooklyn Food Tour",
@@ -85,7 +85,7 @@ event5 = Event.create(
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00")
 
-event7 = Event.create(
+Event.create!(
                 host_id: 7,
                 event_capacity: 100,
                 event_title: "Rammstein",
@@ -98,7 +98,7 @@ event7 = Event.create(
                 event_end_time: "23:00:00")
 
 
-event8 = Event.create(
+Event.create!(
                 host_id: 8,
                 event_capacity: 100,
                 event_title: "rpm raceway",
@@ -110,7 +110,7 @@ event8 = Event.create(
                 event_start_time: "12:00:00",
                 event_end_time: "23:00:00")                
 
-event9 = Event.create(
+Event.create!(
                 host_id: 9,
                 event_capacity: 100,
                 event_title: "Mr purple",
