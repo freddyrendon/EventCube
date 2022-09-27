@@ -22,7 +22,7 @@ const Home = () => {
                         <div className="feed-fullbleed-header-container">
                             <a href="/d"></a>
                             <div className="feed-fullbleed-headertag">
-                                <input className="event-pic-button" type="button" value="Find your next event" href="/"/>
+                                <input className="event-pic-button" type="button" value="Find your next event" onClick={() => { window.location.href = `/#/events` }}/>
                         </div>
                         </div>
                     </div>
