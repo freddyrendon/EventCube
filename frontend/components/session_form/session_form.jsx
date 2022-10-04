@@ -119,7 +119,9 @@ class SessionForm extends React.Component {
                     <h3 className="Log-in">
                         {formType}
                     </h3>
+                    <div className='errors'>
                     {this.renderErrors()}
+                    </div>
                     <div className={"inputGroup"}>
                         <input
                             type="text"
