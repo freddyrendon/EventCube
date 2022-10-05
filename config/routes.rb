@@ -5,16 +5,17 @@ root to: "static_pages#root"
   namespace :api, defaults: { format: :json } do
     resources :users do 
       resources :registrations, only: [:index]
-      resources :likes, only: [:index]
+      # resources :likes, only: [:index]
     end
     resource :session, only: [:create, :destroy]
     resources :events do
       resources :registrations, only: [:create]
-      resources :likes, only: [:create]
+      # resources :likes, only: [:create]
     end
 
     resources :registrations, only: [:destroy]
-    resources :likes, only: [:destroy]
+    # resources :likes, only: [:destroy]
     resources :categories, only: [:show]
+    resources :likes, only: [:create, :index, :destroy, :show]
   end
 end

@@ -23,6 +23,17 @@ class Api::EventsController < ApplicationController
         end
     end
 
+    
+    def destroy
+        @event = Event.find(params[:id])
+
+        if @event.destroy
+            render :show
+        else
+            render json: @event.errors.full_messages, status: 422
+        end
+    end
+    
     # def new
     #     render :new
     # end
@@ -34,16 +45,6 @@ class Api::EventsController < ApplicationController
     #         render :show
     #     else
     #         render json: @event.errors.full_messages, status: :unprocessable_entity
-    #     end
-    # end
-    
-    # def destroy
-    #     @event = Event.find(params[:id])
-
-    #     if @event.destroy
-    #         render :show
-    #     else
-    #         render json: @event.errors.full_messages, status: 422
     #     end
     # end
 
