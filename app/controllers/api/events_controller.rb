@@ -38,15 +38,15 @@ class Api::EventsController < ApplicationController
     #     render :new
     # end
     
-    # def update
-    #     @event = Event.find_by(id: params[:id])
-    #     # byebug
-    #     if @event.update(event_params)
-    #         render :show
-    #     else
-    #         render json: @event.errors.full_messages, status: :unprocessable_entity
-    #     end
-    # end
+    def update
+        @event = Event.find_by(id: params[:id])
+        # byebug
+        if @event.update(event_params)
+            render :show
+        else
+            render json: @event.errors.full_messages, status: :unprocessable_entity
+        end
+    end
 
     # def hosted_events
     #     @events = User.find_by(id: params[:user_id]).hosted_events

@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_08_24_200530) do
     t.integer "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_registrations_on_event_id"
+    t.index ["event_id"], name : "index_registrations_on_event_id"
     t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 

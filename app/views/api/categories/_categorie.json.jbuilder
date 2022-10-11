@@ -1,0 +1,1 @@
+json.extract! categorie, :id, :title, :created_at
