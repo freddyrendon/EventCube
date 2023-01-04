@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchEvent } from "../../actions/event_action";
+import { fetchEvent, deleteEvent } from "../../actions/event_action";
 import { logout } from "../../actions/session";
 import EventShow from "./event_show";
 
@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
     logout: () => dispatch(logout()),
+    deleteEvent: eventId => dispatch(deleteEvent(eventId))
 });
 
 export default connect(mSTP, mDTP)(EventShow);

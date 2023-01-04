@@ -7,6 +7,7 @@ const EventsReducer = (initialState = {}, action) => {
         case RECEIVE_EVENTS:
             return action.events
         case RECEIVE_EVENT:
+            // debugger
             return Object.assign({}, initialState, { [action.event.id]: action.event })
         case REMOVE_EVENT:
             let newState = Object.assign({}, initialState)

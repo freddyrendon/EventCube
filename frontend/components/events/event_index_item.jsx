@@ -15,8 +15,6 @@ class EventIndexItem extends React.Component {
         if (this.props.currentUserId) {
             const { currentUserId,
                 event,
-                deleteBookmark,
-                createBookmark,
                 fetchEvent,
                 fetchEvents,
             } = this.props

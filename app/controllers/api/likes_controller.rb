@@ -2,7 +2,11 @@ class Api::LikesController < ApplicationController
 
 
     def index 
-        @likes = current_user.likes
+        if params[:user_id]
+            @likes = Like.where(user_id: params[:user_id])
+        else
+        @likes = Like.all
+        end
         render :index
     end
 

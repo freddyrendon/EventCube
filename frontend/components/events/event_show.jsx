@@ -7,6 +7,12 @@ function EventShow(props) {
 
     useEffect(() => { props.fetchEvent(props.match.params.eventId) }, []);
 
+    const removeEvent = (eventId) => {
+        props.deleteEvent(eventId)
+
+        
+    }
+
     if (!props.event) {
         return null;
     } else {
@@ -24,8 +30,29 @@ function EventShow(props) {
                                 </div>
                                 <div className="show-basics">
                                     <div className="basics-title">{props.event.event_title}</div>
-                                    <div className="basics-price">
+
+
+
+                                    <div className="event-edit-button">
+                                        <Link to={`/events/Editform/${props.event.id}`} className="edit-button">
+                                            Edit Event
+                                        </Link>
                                     </div>
+
+
+
+
+
+
+                                    <div className="event-delete-button">
+                                        <button className="delete-button" onClick={() => removeEvent(props.event.id)}>
+                                            delete Event
+                                        </button>
+                                    </div>
+
+
+
+
 
                                 </div>
 
@@ -40,11 +67,6 @@ function EventShow(props) {
                                     </div>
 
                                 </div>
-                                <div className="events-capacity">
-                                    {/* Capacity */}
-                                    <br />
-                                    {/* {props.event.event_capacity} */}
-                                </div>
                                 <div className="event-show-details">
                                     <div className="details-column">
                                         <div className="show-date-time">
@@ -52,11 +74,8 @@ function EventShow(props) {
                                             <br />
                                             {props.event.event_start_date}
                                             <br />
-                                            {props.event.event_end_date}
-                                            <br />
                                             {props.event.event_start_time}
                                             <br />
-                                            {props.event.event_end_time}
                                         </div>
                                         <div className="show-location">
                                             Location

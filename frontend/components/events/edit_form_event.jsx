@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 
-class CreateEvent extends React.Component {
+class EditEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            host_id: this.props.currentUser,
-            category_id: "",
-            event_title: "",
-            event_body: "",
-            location: "",
-            event_start_date: "", 
-            event_start_time: ""
+            host_id: this.props.event.host_id,
+            category_id: this.props.event.category_id,
+            event_title: this.props.event.event_body,
+            event_body: this.props.event.event_body,
+            location: this.props.event.location,
+            event_start_date: this.props.event_start_date,
+            event_start_time: this.props.event_start_time
         };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,34 +39,34 @@ class CreateEvent extends React.Component {
         formData.append('event[event_title]', this.state.event_title);
         formData.append('event[event_body]', this.state.event_body);
         formData.append('event[location]', this.state.location);
-        formData.append('event[event_start_date]', this.state.event_start_date); 
-        formData.append('event[event_start_time]', this.state.event_start_time); 
+        formData.append('event[event_start_date]', this.state.event_start_date);
+        formData.append('event[event_start_time]', this.state.event_start_time);
 
 
 
         this.props.createEvent(formData)
-        .then(response => {
-            // console.log(response)
-            if (this.props.formType === 'Create an event') {
-                this.props.history.push(`/`);
-            }
-            else {
-                this.props.history.push(`/events/${response.event.id}`)
-            };
-        })
+            .then(response => {
+                // console.log(response)
+                if (this.props.formType === 'Create an event') {
+                    this.props.history.push(`/`);
+                }
+                else {
+                    this.props.history.push(`/events/${response.event.id}`)
+                };
+            })
     }
 
 
 
     render() {
-        // console.log(this.state)
-        
+
         return (
             <div className="form-container">
                 <form className="form-info-container" onSubmit={this.handleSubmit}>
+                    <div className='form-info'>
+                        <div className='form-basic-info'>
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Title</label>
-                                <br />
                                 <input
                                     className='form-input'
                                     type="text"
@@ -75,11 +75,10 @@ class CreateEvent extends React.Component {
                                     placeholder="Event Title"
                                 />
                             </div>
-
+                        </div>
                         <div className='form-location'>
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Location</label>
-                                <br />
                                 <input
                                     className='form-input'
                                     type="text"
@@ -92,10 +91,10 @@ class CreateEvent extends React.Component {
                         <div className='form-date'>
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Date</label>
-                                <br />
                                 <input
                                     className='form-input'
                                     type="date"
+                                    placeholder="Enter date format MM-DD-YYYY"
                                     onChange={this.update('event_start_date')}
                                     value={this.state.event_start_date}
                                 />
@@ -104,18 +103,16 @@ class CreateEvent extends React.Component {
                         <div className='form-time'>
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Start Time</label>
-                                <br />
                                 <input
                                     className='form-input'
                                     type="time"
+                                    placeholder="Enter Start time format HR:Mins AM/PM"
                                     onChange={this.update('event_start_time')}
                                     value={this.state.event_start_time}
                                 />
                             </div>
                         </div>
                         <div>
-                            <label> Select Category</label>
-                            <br />
                             <select className="dropdown" onChange={this.update('category_id')}>
                                 <option value="3">Music</option>
                                 <option value="4">Performing & Visual Arts</option>
@@ -141,10 +138,11 @@ class CreateEvent extends React.Component {
                             </div>
                         </div>
                         <button className='form-button' type='submit'>submit</button>
+                    </div>
                 </form>
             </div>
         )
     }
 }
 
-export default CreateEvent;
+export default EditEvent;

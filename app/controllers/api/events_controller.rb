@@ -8,12 +8,16 @@ class Api::EventsController < ApplicationController
     end
 
     def show
-        @event = Event.find_by!(id: params[:id])
-        render :show
-        # if conditional to render errors 
+        @event = Event.find_by(id: params[:id])
+        if @event
+            render :show
+        else
+            render json: ['Event does not exist'], status: 404
+        end
     end
     
     def create
+        # debugger
         @event = Event.new(event_params)
 
         if @event.save
@@ -43,6 +47,8 @@ class Api::EventsController < ApplicationController
         # byebug
         if @event.update(event_params)
             render :show
+            #     if @event && @event.host_id == current_user.id && @event.update(event_params)
+            # render :show
         else
             render json: @event.errors.full_messages, status: :unprocessable_entity
         end
@@ -70,13 +76,10 @@ class Api::EventsController < ApplicationController
         params.require(:event).permit(
         :event_title, 
         :event_body,
-        :event_capacity,
         :location, 
         :category_id, 
-        :event_start_date, 
-        :event_end_date, 
+        :event_start_date,  
         :event_start_time, 
-        :event_end_time, 
         :host_id
         )
     end
