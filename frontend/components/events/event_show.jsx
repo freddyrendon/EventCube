@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import Likes from "../likes/likes_index";
 
 
 function EventShow(props) {
@@ -49,6 +50,11 @@ function EventShow(props) {
                                             delete Event
                                         </button>
                                     </div>
+
+                                    {/* <div className="event-like-button">
+                                        <button className="like-button" onClick={console.log(props)}> Like </button>
+                                    </div> */}
+                                    <Likes/>
 
 
 

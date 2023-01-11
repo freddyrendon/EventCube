@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import LikeIndex from './likes_index';
-import { fetchLikes, fetchLike, createLike, deleteLike } from '../../actions/bookmark_actions';
-import { fetchEvents } from '../../actions/event_actions';
+import { fetchLikes, fetchLike, createLike, deleteLike } from '../../actions/like_action';
+import { fetchEvents } from '../../actions/event_action';
 
 const msp = (state) => ({
     currentUser: state.entities.users[state.session.id],
