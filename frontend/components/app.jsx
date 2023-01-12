@@ -14,6 +14,7 @@ import EventIndexContainer from "./events/event_index_container"
 import EventShow from "./events/events_show_container";
 import CreateEventFormContainer from "./events/create_form_event_container"
 import EditEventFormContainer from "./events/edit_form_event_container"
+import LikeContainer from "./likes/likes_container"
 
 // import { Footer } from "../footer/footer";
 import Home from "./homepage/home";
@@ -34,6 +35,7 @@ const App = (props) => {
       <Route exact path='/events/Editform/:eventId' component={EditEventFormContainer} />
         <Route exact path="/events" component={EventIndexContainer} />
         <Route path="/events/:eventId" component={EventShow}/>
+      <Route path="/:myId/likes/events" component={LikeContainer}/>
 
       </Switch>
   </div>  

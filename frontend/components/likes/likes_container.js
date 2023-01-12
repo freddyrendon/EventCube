@@ -6,7 +6,7 @@ import { fetchEvents } from '../../actions/event_action';
 const msp = (state) => ({
     currentUser: state.entities.users[state.session.id],
     likes: state.entities.likes,
-    events: state.entities.events
+    events: state.entities.events, 
 });
 
 const mdp = (dispatch) => ({

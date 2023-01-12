@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 class EditEvent extends React.Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {
             host_id: this.props.event.host_id,

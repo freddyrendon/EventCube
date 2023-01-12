@@ -8,6 +8,8 @@ function EventShow(props) {
 
     useEffect(() => { props.fetchEvent(props.match.params.eventId) }, []);
 
+    
+
     const removeEvent = (eventId) => {
         props.deleteEvent(eventId)
 

@@ -3,16 +3,21 @@ import React from "react";
 
 class LikeIndex extends React.Component{
 
-    constructor(props) {
-        super(props)
-        console.log(this.state)
+    state = {
+        likes: false
+    }
+
+    handleClick = () => {
+        this.setState({
+            likes: this.state.likes = true
+        })
     }
 
 
     render(){
         return(
             <div>
-                <button> Like </button>
+                <button onClick={() => {return this.state.likes = true}}> Like </button>
             </div>
         )
     }
