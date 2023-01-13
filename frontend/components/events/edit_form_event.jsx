@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 class EditEvent extends React.Component {
     constructor(props) {
-        console.log(props)
         super(props);
         this.state = {
             host_id: this.props.event.host_id,
@@ -69,7 +68,7 @@ class EditEvent extends React.Component {
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Title</label>
                                 <input
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     onChange={this.update('event_title')}
                                     value={this.state.event_title}
@@ -81,7 +80,7 @@ class EditEvent extends React.Component {
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Location</label>
                                 <input
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     placeholder="Enter location"
                                     onChange={this.update('location')}
@@ -114,7 +113,9 @@ class EditEvent extends React.Component {
                             </div>
                         </div>
                         <div>
-                            <select className="dropdown" onChange={this.update('category_id')}>
+                            <label className="form-label"> Select Category</label>
+                            <br />
+                            <select className="form-input" onChange={this.update('category_id')}>
                                 <option value="3">Music</option>
                                 <option value="4">Performing & Visual Arts</option>
                                 <option value="5">Travel & Outdoor</option>
@@ -130,7 +131,7 @@ class EditEvent extends React.Component {
                                 <label className='form-label'>Description</label>
                                 <br />
                                 <textarea
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     placeholder="Enter Description"
                                     onChange={this.update('event_body')}

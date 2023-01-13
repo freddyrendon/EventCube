@@ -1,15 +1,57 @@
-// .form-container {
-// border: 2px solid violet;
-// }
+.form-container {
+    // border: 2px solid violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-// .form-info-container {
-// border: 2px solid blue;
-// }
+.form-info-container {
+    // border: 2px solid blue;
+    width: 80%;
+}
 
-// .form-info-input {
-// border: 2px solid yellow;
-// }
+.form-info-input {
+    // border: 2px solid black;
+    padding-bottom: 5%;
+}
 
-// .form-input {
-// border: 2px solid red;
-// }
+.form-input-text {
+    // border: 2px solid red;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-input {
+    // border: 2px solid yellow;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-label {
+    padding-top: 5%;
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button {
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.form-button:hover{
+    background-color: lightgray;
+}

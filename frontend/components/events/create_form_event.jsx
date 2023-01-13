@@ -68,7 +68,7 @@ class CreateEvent extends React.Component {
                                 <label className='form-label'>Event Title</label>
                                 <br />
                                 <input
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     onChange={this.update('event_title')}
                                     value={this.state.event_title}
@@ -81,7 +81,7 @@ class CreateEvent extends React.Component {
                                 <label className='form-label'>Event Location</label>
                                 <br />
                                 <input
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     placeholder="Enter location"
                                     onChange={this.update('location')}
@@ -114,9 +114,9 @@ class CreateEvent extends React.Component {
                             </div>
                         </div>
                         <div>
-                            <label> Select Category</label>
+                        <label className="form-label"> Select Category</label>
                             <br />
-                            <select className="dropdown" onChange={this.update('category_id')}>
+                        <select className="form-input" onChange={this.update('category_id')}>
                                 <option value="3">Music</option>
                                 <option value="4">Performing & Visual Arts</option>
                                 <option value="5">Travel & Outdoor</option>
@@ -132,7 +132,7 @@ class CreateEvent extends React.Component {
                                 <label className='form-label'>Description</label>
                                 <br />
                                 <textarea
-                                    className='form-input'
+                                    className='form-input-text'
                                     type="text"
                                     placeholder="Enter Description"
                                     onChange={this.update('event_body')}
@@ -140,7 +140,7 @@ class CreateEvent extends React.Component {
                                 />
                             </div>
                         </div>
-                        <button className='form-button' type='submit'>submit</button>
+                <button className='form-button' type='submit'>submit</button>
                 </form>
             </div>
         )
