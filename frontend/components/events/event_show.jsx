@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Likes from "../likes/likes_index";
+import Likes from "../likes/likes_container";
 
 
 function EventShow(props) {

@@ -4,7 +4,7 @@ const likesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_LIKES:
-            debugger
+            // debugger
             return Object.assign({}, state, action.likes);
         case RECEIVE_LIKE:
             return Object.assign({}, state, { [action.like.id]: action.like });

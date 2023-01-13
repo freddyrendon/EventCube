@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import EventPanel from "./event_index_panel";
-import EventIndexPanelContainer from "./event_index_panel_container";
 
 function EventIndex(props) {
 
     // const [events, setEvents] = useState([]);
-    // console.log(props.events)
+    // console.log(props)
     useEffect(() => { props.fetchEvents() }, [])
+    // useEffect(() => { props.fetchLikes() }, [])
+
 
    
     const events = props.events.map(event => { 
