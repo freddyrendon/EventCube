@@ -20,11 +20,9 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy 
-        @like = Like.find_by(id: params[:id])
-        if @like.destroy 
-        else
-            render json: ['something went wrong! please try again'], status: 422
-        end
+        @like = Like.find(params[:id])
+        @like.destroy 
+        render json: ['something went wrong! please try again'], status: 422
     end
 
     private
