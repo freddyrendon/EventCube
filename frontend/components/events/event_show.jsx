@@ -11,9 +11,9 @@ function EventShow(props) {
     
 
     const removeEvent = (eventId) => {
+        debugger
         props.deleteEvent(eventId)
 
-        
     }
 
     if (!props.event) {
@@ -53,14 +53,7 @@ function EventShow(props) {
                                         </button>
                                     </div>
 
-                                    {/* <div className="event-like-button">
-                                        <button className="like-button" onClick={console.log(props)}> Like </button>
-                                    </div> */}
                                     <Likes/>
-
-
-
-
 
                                 </div>
 
