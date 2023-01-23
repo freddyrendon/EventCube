@@ -4,19 +4,16 @@
     width: 100%;
     height: 50px;
     background-color: #F7682F;
-    color: white;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     // justify-content: space-between;
     align-items: center;
 }
 
-.footer-logo {
-    font-size: 25px;
+.websites { 
     width: 25px;
-    height: 25px;
-    margin: 10px;
-    text-decoration: none;
-    background-color: black;
-    color: white;
+        height: 25px;
+        margin: 10px;
+
+
 }
