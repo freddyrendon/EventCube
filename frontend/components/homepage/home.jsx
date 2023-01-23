@@ -134,11 +134,11 @@ const Home = () => {
                                 <span>
                                     Discover New York's best experiences, hand-picked by our experts.
                                 </span>
-                                <EventIndexContainer/>
-                                <Footer />
                             </div>
                         </div>
+                                <EventIndexContainer/>
 
+                                <Footer />
                     </div>
                 </div>
 
