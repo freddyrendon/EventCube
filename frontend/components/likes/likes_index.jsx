@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { withRouter } from "react-router-dom";
 
 class LikeIndex extends React.Component{
@@ -6,8 +6,10 @@ class LikeIndex extends React.Component{
         super(props)
 
         this.state = {
-            isLiked: false
+            isLiked: false,
+            likeId: null
         }
+    
 
         // this.handleLike = this.handleLike.bind(this);
         // this.handleLike = this.handleUnLike.bind(this)
@@ -21,13 +23,13 @@ class LikeIndex extends React.Component{
 
 
     componentDidMount(){
-        window.scrollTo(0,0)
-        this.props.fetchLikes()
+        window.scrollTo(0,0);
+        this.props.fetchLikes();
+        // this.findLinkeId();8
     }
 
-
-
-
+    
+    
     handleLike = () => {
         const like = {
             user_id: this.props.currentUser,
@@ -36,17 +38,29 @@ class LikeIndex extends React.Component{
         this.props.createLike(like)
     }
 
+    //create a function that itterates through all the likes. 
+    // if the objects, key of evenetId === this.props.eventId then set it to this.state.likeId
+    // findLinkeId() {
+    //     let theLikes = this.props.likes.map(like => like)
+    //     for (let i = 0; i < theLikes.length; i++) {
+    //         if (theLikes[i].eventId === this.props.eventId) {
+    //             this.state.like = theLikes[i]._id
+    //         }
+    //     }
+    // }
+    
     handleUnLike(likeId){
         this.props.deleteLike(likeId)
     }
 
 
     render(){
-        debugger
+        // debugger
         return(
             <div>
-                <button onClick={this.handleLike}> Like </button>
-                <button onClick={this.handleUnLike}> UnLike </button>
+                <button onClick={() => this.handleLike}> Like </button>
+                <button onClick={() => this.handleUnLike(this.state.likeId)}> UnLike </button>
+                {/* <button onClick={() => this.findLinkeId}> test </button> */}
 
             </div>
         )

@@ -263,3 +263,18 @@ li:hover {
 eds-vector-image--ui-orange svg path {
     fill: #f05537 !important;
 }
+
+.icons {
+    color: red;
+    background-color: rgb(231, 231, 231);
+        // text-align: center;
+        padding: 10px;
+        font-size: 20px;
+        text-decoration: none;
+}
+
+.text{
+    display: inline-flex;
+    // text-align: center;
+    padding-left: 35px;
+}

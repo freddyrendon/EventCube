@@ -1,7 +1,11 @@
 import React from "react"
 import EventIndexContainer from "../events/event_index_container"
 import EventShowContainer from "../events/events_show_container"
-import Footer from "../../footer/footer"
+import Footer from "../../footer/footer" 
+import { FiMusic, FiHeart } from 'react-icons/fi'
+import { FaTheaterMasks } from 'react-icons/fa'
+import { MdCardTravel, MdTravelExplore } from 'react-icons/md'
+import { GiRetroController, GiMartini, GiConverseShoe } from 'react-icons/gi'
 
 
 const Home = () => {
@@ -65,14 +69,57 @@ const Home = () => {
             <div className="category-tiles">
                 <h3 className="category-title">Check out trending categories</h3>
                 <div className="tile-group">
+                    <div className="icons">
+                        <FiMusic/>
+                        <div className="text">
+
                     <a href="/">Music</a>
+                        </div>
+                    </div>
+
+                    <div className="icons">
+                        <FaTheaterMasks/>  
+                        <div className="text">
+                        </div>
+
                     <a href="/">Performing & Visual Arts</a>
-                    <a href="/">Travel & Outdoor</a>
-                    <a href="/">Health</a>
-                    <a href="/">Hobbies</a>
-                    <a href="/">Business</a>
+                    </div>
+                    <div className="icons">
+                        <MdTravelExplore />
+                        <div className="text">
+                        <a href="/">Travel & Outdoor</a>
+                        </div>
+                    </div>
+                    <div className="icons">
+                        <FiHeart/>
+                        <div className="text">
+                        <a href="/">Health</a>
+                        </div>
+                    </div>
+                    <div className="icons">
+                        <GiRetroController/>
+                        <div className="text">
+                        <a href="/">Hobbies</a>
+                        </div>
+                    </div>
+                    <div className="icons">
+                        <MdCardTravel/>
+                        <div className="text">
+                        <a href="/">Business</a>
+                        </div>
+                    </div>
+                    <div className="icons">
+                        <GiMartini/>
+                        <div className="text">
                     <a href="/">Food & Drink</a>
-                    <a href="/">Sports & Fitness</a>
+                        </div>
+                    </div>
+                    <div className="icons">
+                        <GiConverseShoe/>
+                        <div className="text">
+                        <a href="/">Sports & Fitness</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>

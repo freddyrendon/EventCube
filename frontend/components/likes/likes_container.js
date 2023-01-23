@@ -3,7 +3,8 @@ import LikeIndex from './likes_index';
 import { fetchLikes, fetchLike, createLike, deleteLike } from '../../actions/like_action';
 import { fetchEvents } from '../../actions/event_action';
 
-const msp = (state) => ({
+const msp = (state,ownProps) => ({
+    // likeid: state.entities.likes[ownProps.match.params.likeId],
     currentUser: state.session.currentUser.id,
     likes: state.entities.likes,
     events: state.entities.events, 

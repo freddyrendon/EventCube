@@ -11,7 +11,7 @@ function EventShow(props) {
     
 
     const removeEvent = (eventId) => {
-        debugger
+        // debugger
         props.deleteEvent(eventId)
 
     }
@@ -53,7 +53,7 @@ function EventShow(props) {
                                         </button>
                                     </div>
 
-                                    <Likes/>
+                                    <Likes eventId={props.event.id}/>
 
                                 </div>
 
