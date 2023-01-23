@@ -132,7 +132,7 @@ const Home = () => {
                             <h3 className="carousel-title"> Editor's picks</h3>
                             <div className="carousel-body">
                                 <span>
-                                    Discover New York's best experiences, hand-picked by pur experts.
+                                    Discover New York's best experiences, hand-picked by our experts.
                                 </span>
                                 <EventIndexContainer/>
                                 <Footer />
