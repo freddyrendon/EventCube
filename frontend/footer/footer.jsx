@@ -18,7 +18,7 @@ const Footer = () => {
             </a>
             </div>
             <div className='websites'>
-                <a target="_blank" href='https://githu.com/' >
+                <a target="_blank" href='https://angel.co/' >
                     <FaAngellist />
                 </a>
             </div>
