@@ -36,6 +36,8 @@ class LikeIndex extends React.Component{
             event_id: parseInt(this.props.match.params.eventId)
         }
         this.props.createLike(like)
+        debugger
+        // console.log(props)
     }
 
     //create a function that itterates through all the likes. 
@@ -55,7 +57,7 @@ class LikeIndex extends React.Component{
 
 
     render(){
-        // debugger
+        debugger
         return(
             <div>
                 <button onClick={() => this.handleLike}> Like </button>
@@ -64,6 +66,7 @@ class LikeIndex extends React.Component{
 
             </div>
         )
+        debugger
     }
 
 }

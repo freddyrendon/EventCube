@@ -8,17 +8,17 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className='websites'>
-            <a target="_blank" href='https://www.linkedin.com/' >
+                <a target="_blank" href='https://github.com/freddyrendon' >
                     <AiFillGithub/>
             </a>
             </div>
             <div className='websites'>
-            <a target="_blank" href='https://github.com/' >
+                <a target="_blank" href='https://www.linkedin.com/in/freddy-rendon-3302a9234/' >
                     <AiFillLinkedin/>
             </a>
             </div>
             <div className='websites'>
-                <a target="_blank" href='https://angel.co/' >
+                <a target="_blank" href='https://angel.co/u/freddy-rendon' >
                     <FaAngellist />
                 </a>
             </div>
