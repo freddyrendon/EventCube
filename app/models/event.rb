@@ -22,6 +22,8 @@
 class Event < ApplicationRecord
     validates :event_body, :event_title, :location, :category_id, :host_id, presence: true
 
+    has_one_attached :photo
+
 
     belongs_to :user,
     primary_key: :id, 
