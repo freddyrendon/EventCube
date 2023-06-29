@@ -80,7 +80,8 @@ class Api::EventsController < ApplicationController
         :category_id, 
         :event_start_date,  
         :event_start_time, 
-        :host_id
+        :host_id,
+        :photo
         )
     end
 end
