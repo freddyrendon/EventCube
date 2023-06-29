@@ -14,10 +14,12 @@ class CreateEvent extends React.Component {
             event_body: "",
             location: "",
             event_start_date: "", 
-            event_start_time: ""
+            event_start_time: "",
+            photoUrl: null
         };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     componentDidMount() {
@@ -30,6 +32,11 @@ class CreateEvent extends React.Component {
         }
     }
 
+    handleFile(e) {
+        this.setState({ photoUrl: e.currentTarget.files[0] })
+    }
+
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -40,7 +47,8 @@ class CreateEvent extends React.Component {
         formData.append('event[event_body]', this.state.event_body);
         formData.append('event[location]', this.state.location);
         formData.append('event[event_start_date]', this.state.event_start_date); 
-        formData.append('event[event_start_time]', this.state.event_start_time); 
+        formData.append('event[event_start_time]', this.state.event_start_time);
+        formData.append('event[photo]', this.state.photoUrl); 
 
 
 
@@ -60,6 +68,13 @@ class CreateEvent extends React.Component {
 
     render() {
         // console.log(this.state)
+        // console.log(this.state.photoUrl)
+        if (!this.props.event) return null;
+        const img = this.state.photoUrl ? (
+            <div className='img'>Image uploaded</div>
+        ) : (
+            <div className='img'></div>
+        )
         
         return (
             <div className="form-container">
@@ -140,6 +155,23 @@ class CreateEvent extends React.Component {
                                 />
                             </div>
                         </div>
+
+                    <div className='form-photo'>
+                        <div className='form-info-input'>
+                        <label className='form-label'>Event Image</label>
+                            <div className="misc-text">IF EDITING, IMAGE MUST BE UPLOADED AGAIN</div>
+                            <br />
+                            <label className="form-input">
+                                <input
+                                    type="file"
+                                    onChange={this.handleFile}
+                                />
+                                Click to add event image.
+                            </label>
+                            {img}
+                        </div>
+                    </div>
+
                 <button className='form-button' type='submit'>submit</button>
                 </form>
             </div>

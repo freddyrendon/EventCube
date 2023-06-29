@@ -12,7 +12,7 @@
 
 .form-info-input {
     // border: 2px solid black;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .form-input-text {
@@ -36,7 +36,7 @@
 }
 
 .form-label {
-    padding-top: 5%;
+    padding-top: 3%;
     font-family: fantasy;
     display: flex;
     justify-content: center;
@@ -54,4 +54,10 @@
 
 .form-button:hover{
     background-color: lightgray;
+}
+
+.misc-text{
+    text-align: center;
+    padding-top: 2%;
+    font-family: fantasy;
 }

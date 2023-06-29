@@ -36,7 +36,7 @@ class LikeIndex extends React.Component{
             event_id: parseInt(this.props.match.params.eventId)
         }
         this.props.createLike(like)
-        debugger
+        // debugger
         // console.log(props)
     }
 
@@ -57,7 +57,7 @@ class LikeIndex extends React.Component{
 
 
     render(){
-        debugger
+        // debugger
         return(
             <div>
                 <button onClick={() => this.handleLike}> Like </button>

@@ -19,17 +19,19 @@ function EventShow(props) {
     if (!props.event) {
         return null;
     } else {
+        // console.log(props)
         return (
             <div>
                 <div className="event-show-struct">
                     <div className="show-photo-container">
+                        {/* background pic */}
                         {/* <img src={props.event.photoUrl} className="show-photo-opaque" /> */}
                     </div>
                     <div className="show-info">
                         <div className="show-top">
                             <div className="show-photo-basics">
                                 <div className="show-photo-wrapper">
-                                    <img src="https://www.djtimes.com/wp-content/uploads/2021/08/electric-zoo-music-festival-reveals-set-times-for-2021-dj-times.jpg" alt="" />
+                                    <img src={props.event.photoUrl}></img>
                                 </div>
                                 <div className="show-basics">
                                     <div className="basics-title">{props.event.event_title}</div>

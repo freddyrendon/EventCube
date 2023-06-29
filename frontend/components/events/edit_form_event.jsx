@@ -14,10 +14,13 @@ class EditEvent extends React.Component {
             event_body: this.props.event.event_body,
             location: this.props.event.location,
             event_start_date: this.props.event_start_date,
-            event_start_time: this.props.event_start_time
+            event_start_time: this.props.event_start_time,
+            photoUrl: null
         };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+
     }
 
     componentDidMount() {
@@ -28,6 +31,10 @@ class EditEvent extends React.Component {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value })
         }
+    }
+
+    handleFile(e) {
+        this.setState({ photoUrl: e.currentTarget.files[0] })
     }
 
 
@@ -41,6 +48,7 @@ class EditEvent extends React.Component {
         formData.append('event[location]', this.state.location);
         formData.append('event[event_start_date]', this.state.event_start_date);
         formData.append('event[event_start_time]', this.state.event_start_time);
+        formData.append('event[photo]', this.state.event.photoUrl); 
 
 
 
@@ -139,6 +147,9 @@ class EditEvent extends React.Component {
                                 />
                             </div>
                         </div>
+
+
+
                         <button className='form-button' type='submit'>submit</button>
                     </div>
                 </form>
