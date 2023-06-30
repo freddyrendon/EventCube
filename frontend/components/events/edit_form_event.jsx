@@ -7,16 +7,17 @@ import { Link } from 'react-router-dom';
 class EditEvent extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props)
         this.state = {
-            host_id: this.props.event.host_id,
-            category_id: this.props.event.category_id,
-            event_title: this.props.event.event_body,
-            event_body: this.props.event.event_body,
-            location: this.props.event.location,
-            event_start_date: this.props.event_start_date,
-            event_start_time: this.props.event_start_time,
-            photoUrl: null
-        };
+                host_id: this.props.event.host_id,
+                category_id: this.props.event.category_id,
+                event_title: this.props.event.event_body,
+                event_body: this.props.event.event_body,
+                location: this.props.event.location,
+                event_start_date: this.props.event_start_date,
+                event_start_time: this.props.event_start_time,
+                photoUrl: null
+            };
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -48,7 +49,7 @@ class EditEvent extends React.Component {
         formData.append('event[location]', this.state.location);
         formData.append('event[event_start_date]', this.state.event_start_date);
         formData.append('event[event_start_time]', this.state.event_start_time);
-        formData.append('event[photo]', this.state.event.photoUrl); 
+        formData.append('event[photo]', this.state.photoUrl); 
 
 
 
@@ -148,7 +149,21 @@ class EditEvent extends React.Component {
                             </div>
                         </div>
 
-
+                        <div className='form-photo'>
+                            <div className='form-info-input'>
+                                <label className='form-label'>Event Image</label>
+                                <div className="misc-text">IF EDITING, IMAGE MUST BE UPLOADED AGAIN</div>
+                                <br />
+                                <label className="form-input">
+                                    <input
+                                        type="file"
+                                        onChange={this.handleFile}
+                                    />
+                                    Click to add event image.
+                                </label>
+                                {img}
+                            </div>
+                        </div>
 
                         <button className='form-button' type='submit'>submit</button>
                     </div>
