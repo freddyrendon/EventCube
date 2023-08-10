@@ -7,17 +7,18 @@ import { Link } from 'react-router-dom';
 class EditEvent extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
+        console.log(this.props.event)
         this.state = {
-                host_id: this.props.event.host_id,
-                category_id: this.props.event.category_id,
-                event_title: this.props.event.event_body,
-                event_body: this.props.event.event_body,
-                location: this.props.event.location,
-                event_start_date: this.props.event_start_date,
-                event_start_time: this.props.event_start_time,
-                photoUrl: null
-            };
+            host_id: this.props.event.host_id,
+            category_id: this.props.event.category_id,
+            event_title: this.props.event.event_body,
+            event_body: this.props.event.event_body,
+            location: this.props.event.location,
+            event_start_date: this.props.event_start_date,
+            event_start_time: this.props.event_start_time,
+            photoUrl: null
+        };
+      
         this.update = this.update.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
@@ -53,7 +54,7 @@ class EditEvent extends React.Component {
 
 
 
-        this.props.createEvent(formData)
+        this.props.updateEvent(formData)
             .then(response => {
                 // console.log(response)
                 if (this.props.formType === 'Create an event') {
@@ -68,7 +69,8 @@ class EditEvent extends React.Component {
 
 
     render() {
-
+        console.log(this.props.event.event_start_date)
+        console.log(this.state)
         return (
             <div className="form-container">
                 <form className="form-info-container" onSubmit={this.handleSubmit}>
@@ -105,7 +107,7 @@ class EditEvent extends React.Component {
                                     type="date"
                                     placeholder="Enter date format MM-DD-YYYY"
                                     onChange={this.update('event_start_date')}
-                                    value={this.state.event_start_date}
+                                    value={new Date(this.props.event.event_start_date)}
                                 />
                             </div>
                         </div>
@@ -161,7 +163,7 @@ class EditEvent extends React.Component {
                                     />
                                     Click to add event image.
                                 </label>
-                                {img}
+                                {/* {img} */}
                             </div>
                         </div>
 

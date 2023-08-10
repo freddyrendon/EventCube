@@ -7,14 +7,19 @@ class LikeIndex extends React.Component{
 
         this.state = {
             isLiked: false,
-            likeId: null
+            likeId: this.props.eventId,
+            deletelike: null
         }
+
+
     
 
-        // this.handleLike = this.handleLike.bind(this);
-        // this.handleLike = this.handleUnLike.bind(this)
+        this.handleLike = this.handleLike.bind(this);
+        this.handleUnLike = this.handleUnLike.bind(this);
+        // this.findLinkeId = this.findLinkeId.bind(this);
 
     }
+
 
     // if currentuser = likes[array].userID
     // iterate eventid to match currentevent
@@ -25,44 +30,67 @@ class LikeIndex extends React.Component{
     componentDidMount(){
         window.scrollTo(0,0);
         this.props.fetchLikes();
-        // this.findLinkeId();8
+        // this.findLinkeId();
     }
 
     
     
     handleLike = () => {
+        console.log("like triggered")
         const like = {
             user_id: this.props.currentUser,
-            event_id: parseInt(this.props.match.params.eventId)
+            // event_id: parseInt(this.props.match.params.eventId)
+            event_id: this.props.eventId
         }
         this.props.createLike(like)
         // debugger
-        // console.log(props)
+        console.log(this.props.likes)
     }
 
     //create a function that itterates through all the likes. 
     // if the objects, key of evenetId === this.props.eventId then set it to this.state.likeId
+
     // findLinkeId() {
-    //     let theLikes = this.props.likes.map(like => like)
-    //     for (let i = 0; i < theLikes.length; i++) {
-    //         if (theLikes[i].eventId === this.props.eventId) {
-    //             this.state.like = theLikes[i]._id
+    //     const getlikes = Object.values(this.props.likes)
+
+    //         for (let i = 0; i < getlikes.length; i++) {
+    //         // console.log(getlikes[i])
+    //         // console.log(this.props.currentUser)
+    //             if ((getlikes[i].event_id === this.props.eventId) && (this.props.currentUser === getlikes[i].user_id)) {
+    //                 this.state.deletelike = getlikes[i].id
+    //                 console.log(getlikes[i].id)
+    //             }
     //         }
-    //     }
+        
     // }
     
-    handleUnLike(likeId){
-        this.props.deleteLike(likeId)
+    handleUnLike(){
+        const getlikes = Object.values(this.props.likes)
+
+        for (let i = 0; i < getlikes.length; i++) {
+            // console.log(getlikes[i])
+            // console.log(this.props.currentUser)
+            if ((getlikes[i].event_id === this.props.eventId) && (this.props.currentUser === getlikes[i].user_id)) {
+                console.log(getlikes[i].id)
+                console.log("hello")
+                // this.state.deletelike = getlikes[i].id
+                this.props.deleteLike(getlikes[i].id)
+                console.log("delete and handle unlike")
+            }
+        }
     }
 
+
+    // update thunk for unlike
 
     render(){
         // debugger
         return(
+
             <div>
-                <button onClick={() => this.handleLike}> Like </button>
-                <button onClick={() => this.handleUnLike(this.state.likeId)}> UnLike </button>
-                {/* <button onClick={() => this.findLinkeId}> test </button> */}
+                <button onClick={() => this.handleLike()}> Like </button>
+                <button onClick={() => this.handleUnLike()}> UnLike </button>
+                {/* <button onClick={() => this.findLinkeId()}> test </button> */}
 
             </div>
         )
