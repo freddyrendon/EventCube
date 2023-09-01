@@ -15,7 +15,7 @@ const mDTP = dispatch => ({
     createEvent: event => dispatch(createEvent(event)),
     logout: () => dispatch(logout),
     clearEventErrors: () => dispatch(clearEventErrors()),
-    updateEvent: event => dispatch(updateEvent(event))
+    updateEvent: (FormData,eventId) => dispatch(updateEvent(FormData,eventId))
     
 });
 

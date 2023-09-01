@@ -14,9 +14,9 @@ class EditEvent extends React.Component {
             event_title: this.props.event.event_body,
             event_body: this.props.event.event_body,
             location: this.props.event.location,
-            event_start_date: this.props.event_start_date,
-            event_start_time: this.props.event_start_time,
-            photoUrl: null
+            event_start_date: this.props.event.event_start_date,
+            event_start_time: this.props.event.event_start_time,
+            photoUrl: this.props.event.photoUrl
         };
       
         this.update = this.update.bind(this);
@@ -52,9 +52,9 @@ class EditEvent extends React.Component {
         formData.append('event[event_start_time]', this.state.event_start_time);
         formData.append('event[photo]', this.state.photoUrl); 
 
+        debugger
 
-
-        this.props.updateEvent(formData)
+        this.props.updateEvent(formData,this.props.event.id)
             .then(response => {
                 // console.log(response)
                 if (this.props.formType === 'Create an event') {
@@ -69,8 +69,8 @@ class EditEvent extends React.Component {
 
 
     render() {
-        console.log(this.props.event.event_start_date)
-        console.log(this.state)
+        // console.log(this.props.event.event_start_date)
+        // console.log(this.state)
         return (
             <div className="form-container">
                 <form className="form-info-container" onSubmit={this.handleSubmit}>
@@ -107,7 +107,7 @@ class EditEvent extends React.Component {
                                     type="date"
                                     placeholder="Enter date format MM-DD-YYYY"
                                     onChange={this.update('event_start_date')}
-                                    value={new Date(this.props.event.event_start_date)}
+                                    value={this.state.event_start_date}
                                 />
                             </div>
                         </div>
@@ -163,7 +163,7 @@ class EditEvent extends React.Component {
                                     />
                                     Click to add event image.
                                 </label>
-                                {/* {img} */}
+                                <img className="img" src={this.state.photoUrl}></img>
                             </div>
                         </div>
 

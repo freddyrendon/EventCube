@@ -36,7 +36,7 @@ class LikeIndex extends React.Component{
     
     
     handleLike = () => {
-        console.log("like triggered")
+        // console.log("like triggered")
         const like = {
             user_id: this.props.currentUser,
             // event_id: parseInt(this.props.match.params.eventId)
@@ -44,7 +44,7 @@ class LikeIndex extends React.Component{
         }
         this.props.createLike(like)
         // debugger
-        console.log(this.props.likes)
+        // console.log(this.props.likes)
     }
 
     //create a function that itterates through all the likes. 
@@ -71,11 +71,11 @@ class LikeIndex extends React.Component{
             // console.log(getlikes[i])
             // console.log(this.props.currentUser)
             if ((getlikes[i].event_id === this.props.eventId) && (this.props.currentUser === getlikes[i].user_id)) {
-                console.log(getlikes[i].id)
-                console.log("hello")
+                // console.log(getlikes[i].id)
+                // console.log("hello")
                 // this.state.deletelike = getlikes[i].id
                 this.props.deleteLike(getlikes[i].id)
-                console.log("delete and handle unlike")
+                // console.log("delete and handle unlike")
             }
         }
     }

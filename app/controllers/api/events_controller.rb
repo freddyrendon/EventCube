@@ -44,7 +44,7 @@ class Api::EventsController < ApplicationController
     
     def update
         @event = Event.find_by(id: params[:id])
-        # byebug
+        debugger
         if @event.update(event_params)
             render :show
             #     if @event && @event.host_id == current_user.id && @event.update(event_params)

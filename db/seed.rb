@@ -7,13 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Event.destroy_all
+puts "destroying all Events"
 User.destroy_all
+puts "destroying all Users"
+
 
 demo = User.create!(first_name: "demo", last_name: "test", email:"test@aio.com", password:"password")
 freddy = User.create!(first_name: "Freddy", last_name: "Rendon", email:"FreddyRendon@aio.com", password:"password")
 
 Event.create!(
-                host_id: 2,
+                host_id: demo.id,
                 category_id: 1,
                 event_capacity: 500,
                 event_title: "Electric Zoo Festival",
@@ -25,7 +28,7 @@ Event.create!(
                 event_end_time: "23:00:00"),
 
 Event.create!(
-                host_id: 1,
+                host_id: demo.id,
                 event_capacity: 250,
                 event_title: "New York Yankees",
                 event_body: "Dont miss out on this ultimate rivalry Boston Red Sox vs The New York Yankees",
@@ -38,7 +41,7 @@ Event.create!(
 
             
 Event.create!(
-                host_id: 3,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "Wonder Pig Korean BBQ",
                 event_body: "Bringing an AYCE (All You Can Eat) K-BBQ experience",
@@ -50,7 +53,7 @@ Event.create!(
                 event_end_time: "23:00:00"),
 
 Event.create!(
-                host_id: 4,
+                host_id: demo.id,
                 event_capacity: 300,
                 event_title: "Bad Bunny Baby",
                 event_body: "Picante picante como un habanero!",
@@ -62,7 +65,7 @@ Event.create!(
                 event_end_time: "23:00:00"),
 
 Event.create!(
-                host_id: 6,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "230 5th rooftop",
                 event_body: "Dance the night away",
@@ -74,7 +77,7 @@ Event.create!(
                 event_end_time: "23:00:00")
 
 Event.create!(
-                host_id: 5,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "Williamsburg Bites Brooklyn Food Tour",
                 event_body: "Explore and taste your way through Brooklyn",
@@ -86,7 +89,7 @@ Event.create!(
                 event_end_time: "23:00:00")
 
 Event.create!(
-                host_id: 7,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "Rammstein",
                 event_body: "du...du hast...du hast mich",
@@ -99,7 +102,7 @@ Event.create!(
 
 
 Event.create!(
-                host_id: 8,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "rpm raceway",
                 event_body: "RPM Raceway is the ultimate all-electric indoor go-kart",
@@ -111,7 +114,7 @@ Event.create!(
                 event_end_time: "23:00:00")                
 
 Event.create!(
-                host_id: 9,
+                host_id: demo.id,
                 event_capacity: 100,
                 event_title: "Mr purple",
                 event_body: "On the Hotel Indigo's 15th floor",
