@@ -1,102 +1,73 @@
-import React  from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 
-class LikeIndex extends React.Component{
+class LikeIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
-            isLiked: false,
-            likeId: this.props.eventId,
-            deletelike: null
-        }
+            isLiked: this.isEventLikedByCurrentUser(),
+            likeId: null
+        };
 
-
-    
-
-        this.handleLike = this.handleLike.bind(this);
-        this.handleUnLike = this.handleUnLike.bind(this);
-        // this.findLinkeId = this.findLinkeId.bind(this);
-
+        this.handleLikeToggle = this.handleLikeToggle.bind(this);
     }
 
-
-    // if currentuser = likes[array].userID
-    // iterate eventid to match currentevent
-    // iterate userid to match currentevent
-    // set state to true 
-
-
-    componentDidMount(){
-        window.scrollTo(0,0);
+    componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchLikes();
-        // this.findLinkeId();
     }
 
-    
-    
-    handleLike = () => {
-        // console.log("like triggered")
-        const like = {
-            user_id: this.props.currentUser,
-            // event_id: parseInt(this.props.match.params.eventId)
-            event_id: this.props.eventId
-        }
-        this.props.createLike(like)
-        // debugger
-        // console.log(this.props.likes)
-    }
-
-    //create a function that itterates through all the likes. 
-    // if the objects, key of evenetId === this.props.eventId then set it to this.state.likeId
-
-    // findLinkeId() {
-    //     const getlikes = Object.values(this.props.likes)
-
-    //         for (let i = 0; i < getlikes.length; i++) {
-    //         // console.log(getlikes[i])
-    //         // console.log(this.props.currentUser)
-    //             if ((getlikes[i].event_id === this.props.eventId) && (this.props.currentUser === getlikes[i].user_id)) {
-    //                 this.state.deletelike = getlikes[i].id
-    //                 console.log(getlikes[i].id)
-    //             }
-    //         }
-        
-    // }
-    
-    handleUnLike(){
-        const getlikes = Object.values(this.props.likes)
-
-        for (let i = 0; i < getlikes.length; i++) {
-            // console.log(getlikes[i])
-            // console.log(this.props.currentUser)
-            if ((getlikes[i].event_id === this.props.eventId) && (this.props.currentUser === getlikes[i].user_id)) {
-                // console.log(getlikes[i].id)
-                // console.log("hello")
-                // this.state.deletelike = getlikes[i].id
-                this.props.deleteLike(getlikes[i].id)
-                // console.log("delete and handle unlike")
-            }
+    componentDidUpdate(prevProps) {
+        if (prevProps.likes !== this.props.likes) {
+            this.setState({
+                isLiked: this.isEventLikedByCurrentUser()
+            });
         }
     }
 
+    isEventLikedByCurrentUser() {
+        const likedEvent = Object.values(this.props.likes).find(like =>
+            like.event_id === this.props.eventId &&
+            like.user_id === this.props.currentUser
+        );
 
-    // update thunk for unlike
+        if (likedEvent) {
+            this.setState({ likeId: likedEvent.id });
+            return true;
+        }
+        return false;
+    }
 
-    render(){
-        // debugger
-        return(
+    handleLikeToggle() {
+        if (this.state.isLiked) {
+            this.props.deleteLike(this.state.likeId);
+        } else {
+            const like = {
+                user_id: this.props.currentUser,
+                event_id: this.props.eventId
+            };
+            this.props.createLike(like);
+        }
+    }
 
+    render() {
+
+        const likesForThisEvent = Object.values(this.props.likes).filter(
+            like => like.event_id === this.props.eventId
+        );
+
+        const likeCount = likesForThisEvent.length;
+
+        return (
             <div>
-                <button onClick={() => this.handleLike()}> Like </button>
-                <button onClick={() => this.handleUnLike()}> UnLike </button>
-                {/* <button onClick={() => this.findLinkeId()}> test </button> */}
-
+                <button onClick={this.handleLikeToggle}>
+                    {this.state.isLiked ? "Unlike" : "Like"}
+                </button>
+                <p>{likeCount} {likeCount === 1 ? "Like" : "Likes"}</p>
             </div>
-        )
-        debugger
+        );
     }
-
 }
 
 export default withRouter(LikeIndex);
