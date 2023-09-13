@@ -11,7 +11,6 @@ function EventShow(props) {
     
 
     const removeEvent = (eventId) => {
-        // debugger
         props.deleteEvent(eventId)
 
     }
@@ -19,7 +18,6 @@ function EventShow(props) {
     if (!props.event) {
         return null;
     } else {
-        // console.log(props)
         return (
             <div>
                 <div className="event-show-struct">

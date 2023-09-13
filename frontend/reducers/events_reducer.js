@@ -2,12 +2,10 @@ import { RECEIVE_EVENT, RECEIVE_EVENTS, REMOVE_EVENT } from "../actions/event_ac
 
 const EventsReducer = (initialState = {}, action) => {
     Object.freeze(initialState)
-    // debugger
     switch (action.type) {
         case RECEIVE_EVENTS:
             return action.events
         case RECEIVE_EVENT:
-            // debugger
             return Object.assign({}, initialState, { [action.event.id]: action.event })
         case REMOVE_EVENT:
             let newState = Object.assign({}, initialState)

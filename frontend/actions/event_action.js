@@ -59,7 +59,6 @@ export const createEvent = event => dispatch => {
 }
 
 export const updateEvent = (formData, eventId) => dispatch => {
-    debugger
     return EventAPIUtil.updateEvent(formData, eventId)
         .then(event => dispatch(receiveEvent(event))
             , err => (

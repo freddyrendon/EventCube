@@ -17,7 +17,6 @@ class Api::EventsController < ApplicationController
     end
     
     def create
-        # debugger
         @event = Event.new(event_params)
 
         if @event.save
@@ -44,11 +43,8 @@ class Api::EventsController < ApplicationController
     
     def update
         @event = Event.find_by(id: params[:id])
-        debugger
         if @event.update(event_params)
             render :show
-            #     if @event && @event.host_id == current_user.id && @event.update(event_params)
-            # render :show
         else
             render json: @event.errors.full_messages, status: :unprocessable_entity
         end

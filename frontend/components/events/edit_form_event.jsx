@@ -52,7 +52,7 @@ class EditEvent extends React.Component {
         formData.append('event[event_start_time]', this.state.event_start_time);
         formData.append('event[photo]', this.state.photoUrl); 
 
-        debugger
+
 
         this.props.updateEvent(formData,this.props.event.id)
             .then(response => {

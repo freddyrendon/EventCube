@@ -2,7 +2,7 @@ class Api::CategoriesController < ApplicationController
 # before_action :require_logged_in, only: [:create, :update, :destroy]
 
     def index
-        # debugger
+
         @categories = Categorie.all
 
         render :index
