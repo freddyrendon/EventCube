@@ -4,12 +4,20 @@ import { Link } from 'react-router-dom';
 
 class navBar extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            searchInput: ""
+        };
 
+        this.handleSearchInput = this.handleSearchInput.bind(this);
+    }
+
+    handleSearchInput(e) {
+        this.setState({ searchInput: e.target.value });
     }
 
 
-    /// onclick redirct to /events 
+
 
 
     render() {
@@ -23,29 +31,43 @@ class navBar extends React.Component {
                     <Link to='/' className="logo" >
                         eventcube
                     </Link>
-                    {<input className="navbar-search" type="search" placeholder="Search Events" onClick={() => { window.location.href = `/#/events` }} />}
+                    <input
+                        className="navbar-search"
+                        type="search"
+                        placeholder="Search Events"
+                        value={this.state.searchInput}
+                        onChange={this.handleSearchInput}
+                        onClick={() => { window.location.href = `/#/events?search=${this.state.searchInput}` }}
+                    />
 
-                    {/* <input className="navbar-search" type="search" placeholder="Search Events" onClick={() => { window.location.href = `/#/events` }} />
-                    {
-                        currentUser ? `Welcome ${currentUser.email}` : 
-                    <> */}
                     <Link to="/login" className="signup-login-link">Log in</Link>
                     <Link to="/signup" className="signup-login-link">Sign Up</Link>
-                        {/* </> */}
-                    {/* } */}
-                
                 </div>
             </>
         )
 
-        const personalGreeting = () => ( // can have this render splash page component instead
+        const personalGreeting = () => ( 
             <>
                 <div className="navBar">
                     <Link to='/' className={"logo"} >
                         eventcube
                     </Link>
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            window.location.href = `/#/events?search=${this.state.searchInput}`;
+                        }}
+                    >
+                        <input
+                            className="navbar-search"
+                            type="search"
+                            placeholder="Search Events"
+                            value={this.state.searchInput}
+                            onChange={this.handleSearchInput}
+                        />
+                        <button type="submit">Search</button>
+                    </form>
 
-                    {<input className="navbar-search" type="search" placeholder="Search Events" onClick={() => { window.location.href = `/#/events` }} /> }
                         
                         
 
@@ -53,18 +75,11 @@ class navBar extends React.Component {
                         <Link to="/events/form" className="create link-button">
                             Create Event
                         </Link>
-                        {/* <Link to={`/users/${currentUser.id}/bookmarks`} className="link-button">
-                            Likes
-                        </Link>
-                        <Link to={`/users//registrations/`} className="link-button">
-                            Tickets
-                        </Link> */}
                         <div className="dropdown">
                             <a className="signup-login-link dropbtn"> 
                                 {currentUser.email}
                             </a>
                             <div className="dropdown-content">
-                                {/* <Link to={`/users/${currentUser.id}/events`}> */}
                                 <Link to={`/events`}>
                                     events index
                                 </Link>

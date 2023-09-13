@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
+
 
 function EventIndex(props) {
 
-    // const [events, setEvents] = useState([]);
-    // console.log(props)
+    const location = useLocation();
+    const query = new URLSearchParams(location.search);
+    const searchTerm = query.get('search');
+
+
     useEffect(() => { props.fetchEvents() }, [])
-    // useEffect(() => { props.fetchLikes() }, [])
 
+    const eventsToDisplay = searchTerm ?
+        props.events.filter(event => event.event_title.toLowerCase().includes(searchTerm.toLowerCase())) :
+        props.events;
 
-   
-    const events = props.events.map(event => { 
-        return <div className="events-loco" key={event.id}
+    const events = eventsToDisplay.map(event => (
+        <div className="events-loco" key={event.id}
             onClick={() => { window.location.href = `/#/events/${event.id}` }}>
             <img className="momo-pic" src={event.photoUrl} alt="" />
             <div className="momo">
                 <div className="event_title">
-                {event.event_title}
+                    {event.event_title}
                 </div>
-
                 <div className="event_location">
-                 {event.location}
+                    {event.location}
                 </div>
-
-                 <div className="event_date">
+                <div className="event_date">
                     {event.event_start_date}
-                 </div>
-                 <div>
-                 </div>
+                </div>
             </div>
-
-                 
         </div>
-    });
+    ));
 
     return <div className="events-index-container">
             <div className="index-header">
@@ -39,7 +39,7 @@ function EventIndex(props) {
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
                     <div className="default-wrappa">
-                        {events}
+                    {events}
                     </div>
                 </div>
             </div>
@@ -47,3 +47,4 @@ function EventIndex(props) {
 }
 
 export default EventIndex;
+
