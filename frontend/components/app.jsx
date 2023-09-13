@@ -16,29 +16,31 @@ import CreateEventFormContainer from "./events/create_form_event_container"
 import EditEventFormContainer from "./events/edit_form_event_container"
 import LikeContainer from "./likes/likes_container"
 
-// import { Footer } from "../footer/footer";
+
 import Home from "./homepage/home";
 
 
-// index is /events 
-// show is /events/:eventid
 
 const App = (props) => {
 
-  return ( <div className="main-content">
-    <NavBarContainer />
+  return (
+    <div className="main-content">
+      <NavBarContainer />
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={Home} />
-      <Route exact path='/events/form' component={CreateEventFormContainer} />
-      <Route exact path='/events/Editform/:eventId' component={EditEventFormContainer} />
-        <Route exact path="/events" component={EventIndexContainer} />
-        <Route path="/events/:eventId" component={EventShow}/>
-      <Route path="/:myId/likes/events" component={LikeContainer}/>
+
+        <ProtectedRoute exact path='/events/form' component={CreateEventFormContainer} />
+        <ProtectedRoute exact path='/events/Editform/:eventId' component={EditEventFormContainer} />
+        <ProtectedRoute exact path="/events" component={EventIndexContainer} />
+        <ProtectedRoute path="/events/:eventId" component={EventShow} />
+        <ProtectedRoute path="/:myId/likes/events" component={LikeContainer} />
 
       </Switch>
-  </div>  
-)};
+    </div>
+  )
+};
 
-export default App
+export default App;
+

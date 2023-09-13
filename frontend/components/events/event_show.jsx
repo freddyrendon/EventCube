@@ -55,7 +55,7 @@ function EventShow(props) {
                                         </button>
                                     </div>
                                         {console.log(props.event.id)}
-                                    <Likes eventId={props.event.id}/>
+                                    <Likes eventId={props?.event?.id}/>
 
                                 </div>
 
