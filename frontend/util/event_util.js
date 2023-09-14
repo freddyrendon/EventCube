@@ -40,9 +40,3 @@ export const deleteEvent = (eventId) => {
     })
 }
 
-// export const fetchHostedEvents = (userId) => {
-//     return $.ajax({
-//         method: 'GET',
-//         url: `/api/users/${userId}/events`
-//     })
-// };

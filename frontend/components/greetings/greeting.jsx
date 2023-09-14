@@ -6,7 +6,6 @@ function Greeting(props) {
 
     const loggingout = e => {
         e.preventDefault();
-        // console.log('logged out');
         props.logout().then(() => <Redirect to="/" />)
     }
 

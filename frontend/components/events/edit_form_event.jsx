@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 class EditEvent extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.event)
         this.state = {
             host_id: this.props.event.host_id,
             category_id: this.props.event.category_id,
@@ -56,7 +55,6 @@ class EditEvent extends React.Component {
 
         this.props.updateEvent(formData,this.props.event.id)
             .then(response => {
-                // console.log(response)
                 if (this.props.formType === 'Create an event') {
                     this.props.history.push(`/`);
                 }
@@ -69,8 +67,6 @@ class EditEvent extends React.Component {
 
 
     render() {
-        // console.log(this.props.event.event_start_date)
-        // console.log(this.state)
         return (
             <div className="form-container">
                 <form className="form-info-container" onSubmit={this.handleSubmit}>

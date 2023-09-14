@@ -5,7 +5,6 @@ import EventIndex from "./event_index";
 
 
 const mSTP = (state, ownProps) => {
-    // console.log(Object.values(state.entities.events)) 
         return {
     events: Object.values(state.entities.events)
 }

@@ -52,7 +52,6 @@ function EventShow(props) {
                                             delete Event
                                         </button>
                                     </div>
-                                        {console.log(props.event.id)}
                                     <Likes eventId={props?.event?.id}/>
 
                                 </div>

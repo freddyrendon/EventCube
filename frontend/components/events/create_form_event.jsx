@@ -54,7 +54,6 @@ class CreateEvent extends React.Component {
 
         this.props.createEvent(formData)
         .then(response => {
-            // console.log(response)
             if (this.props.formType === 'Create an event') {
                 this.props.history.push(`/`);
             }
@@ -67,8 +66,6 @@ class CreateEvent extends React.Component {
 
 
     render() {
-        // console.log(this.state)
-        // console.log(this.state.photoUrl)
         if (!this.props.event) return null;
         const img = this.state.photoUrl ? (
             <div className='img'>Image uploaded</div>
