@@ -12,7 +12,7 @@ User.destroy_all
 puts "destroying all Users"
 
 
-demo = User.create!(first_name: "demo", last_name: "test", email:"test@aio.com", password:"password")
+demo = User.create!(first_name: "demo", last_name: "test", email:"demo@user.com", password:"demouser")
 freddy = User.create!(first_name: "Freddy", last_name: "Rendon", email:"FreddyRendon@aio.com", password:"password")
 
 Event.create!(
