@@ -11,7 +11,6 @@ import {
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        // this.newState = Object.assign({}, this.props.information)
         this.state = this.props.information
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -25,19 +24,14 @@ class SessionForm extends React.Component {
     demoUserSignin(demoUser) {
         return e => {
             e.preventDefault();
-            // console.log("hello")
             this.props.processForm(demoUser)
-            this.props.history.push(`/`)
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        // const user = Object.assign({}, this.state);
         this.props.processForm(this.state)
         this.setState(this.newState)
-        // this.props.history.push(`/`) // only do this on a successful login / sign up
-
     }
 
     renderErrors() {
@@ -106,6 +100,7 @@ class SessionForm extends React.Component {
                 </>
             )
         }
+
 
         return (
             <div className={"split left container session-form"}>
