@@ -9,7 +9,6 @@ import { GiRetroController, GiMartini, GiConverseShoe } from 'react-icons/gi'
 
 
 const Home = () => {
-    // console.log(EventIndexContainer)
 
     return (
         <div className="fullbleed-header">

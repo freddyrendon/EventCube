@@ -52,7 +52,7 @@ class navBar extends React.Component {
                     <Link to='/' className={"logo"} >
                         eventcube
                     </Link>
-                    <form
+                    <form className='nav-form'
                         onSubmit={(e) => {
                             e.preventDefault();
                             window.location.href = `/#/events?search=${this.state.searchInput}`;
@@ -64,8 +64,12 @@ class navBar extends React.Component {
                             placeholder="Search Events"
                             value={this.state.searchInput}
                             onChange={this.handleSearchInput}
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                window.location.href = `/#/events?search=${this.state.searchInput}`;
+                            }}
                         />
-                        <button type="submit">Search</button>
+                        <button className='nav-form-button' type="submit">Search</button>
                     </form>
 
                         
