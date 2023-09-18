@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Likes from "../likes/likes_container";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 
 function EventShow(props) {
@@ -37,20 +40,16 @@ function EventShow(props) {
 
                                     <div className="event-edit-button">
                                         <Link to={`/events/Editform/${props.event.id}`} className="edit-button">
-                                            Edit Event
+                                            <FontAwesomeIcon icon={faEdit} /> Edit Event
                                         </Link>
                                     </div>
 
-
-
-
-
-
                                     <div className="event-delete-button">
                                         <button className="delete-button" onClick={() => removeEvent(props.event.id)}>
-                                            delete Event
+                                            <FontAwesomeIcon icon={faTrash} /> Delete Event
                                         </button>
                                     </div>
+
                                     <Likes eventId={props?.event?.id}/>
 
                                 </div>

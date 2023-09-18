@@ -1,5 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
 class LikeIndex extends React.Component {
     constructor(props) {
@@ -61,16 +64,18 @@ class LikeIndex extends React.Component {
 
         return (
             <div>
-                <button onClick={this.handleLikeToggle} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                <button onClick={this.handleLikeToggle} className="button-icon like-button">
                     {this.state.isLiked
-                        ? <i className="fas fa-heart" style={{ color: "red" }}></i>
-                        : <i className="far fa-heart"></i>
+                        ? <FontAwesomeIcon icon={solidHeart} style={{ color: "red" }} />
+                        : <FontAwesomeIcon icon={regularHeart} style={{ color: "#007bff" }} />
                     }
                 </button>
+
                 <p>{likeCount} {likeCount === 1 ? "Like" : "Likes"}</p>
             </div>
         );
     }
+   
 }
 
 export default withRouter(LikeIndex);

@@ -4,7 +4,7 @@ import { fetchLikes, fetchLike, createLike, deleteLike } from '../../actions/lik
 import { fetchEvents } from '../../actions/event_action';
 
 const msp = (state,ownProps) => ({
-    currentUser: state.session.currentUser.id,
+    currentUser: state.session.currentUser ? state.session.currentUser.id : null,
     likes: state.entities.likes,
     events: state.entities.events, 
 });
