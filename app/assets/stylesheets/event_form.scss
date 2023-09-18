@@ -1,22 +1,18 @@
 .form-container {
-    // border: 2px solid violet;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .form-info-container {
-    // border: 2px solid blue;
     width: 80%;
 }
 
 .form-info-input {
-    // border: 2px solid black;
     padding-bottom: 3%;
 }
 
 .form-input-text {
-    // border: 2px solid red;
     width: 60%;
     border-radius: 10px;
     text-align: center;
@@ -26,7 +22,6 @@
 }
 
 .form-input {
-    // border: 2px solid yellow;
     border-radius: 10px;
     text-align: center;
     width: 60%;
@@ -61,3 +56,24 @@
     padding-top: 2%;
     font-family: fantasy;
 }
+
+.image-container {
+    width: 60%;
+    height: 200px;
+    margin: 10px auto;
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+

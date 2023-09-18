@@ -146,12 +146,14 @@ class EditEvent extends React.Component {
                                 />
                             </div>
                         </div>
-
+                        
                         <div className='form-photo'>
                             <div className='form-info-input'>
                                 <label className='form-label'>Event Image</label>
+                                <div className="image-container">
+                                    <img className="img" src={this.state.photoUrl} alt="Event Preview" />
+                                </div>
                                 <div className="misc-text">IF EDITING, IMAGE MUST BE UPLOADED AGAIN</div>
-                                <br />
                                 <label className="form-input">
                                     <input
                                         type="file"
@@ -159,9 +161,9 @@ class EditEvent extends React.Component {
                                     />
                                     Click to add event image.
                                 </label>
-                                <img className="img" src={this.state.photoUrl}></img>
                             </div>
                         </div>
+
 
                         <button className='form-button' type='submit'>submit</button>
                     </div>
