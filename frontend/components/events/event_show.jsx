@@ -22,8 +22,7 @@ function EventShow(props) {
             <div>
                 <div className="event-show-struct">
                     <div className="show-photo-container">
-                        {/* background pic */}
-                        {/* <img src={props.event.photoUrl} className="show-photo-opaque" /> */}
+                        <img src={props.event.photoUrl} className="show-photo-opaque" />
                     </div>
                     <div className="show-info">
                         <div className="show-top">

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
-
+import Likes from '../likes/likes_container';
 
 function EventIndex(props) {
-
     const location = useLocation();
     const query = new URLSearchParams(location.search);
     const searchTerm = query.get('search');
 
-
-    useEffect(() => { props.fetchEvents() }, [])
+    useEffect(() => {
+        props.fetchEvents();
+    }, []);
 
     const eventsToDisplay = searchTerm ?
         props.events.filter(event => event.event_title.toLowerCase().includes(searchTerm.toLowerCase())) :
@@ -29,22 +29,23 @@ function EventIndex(props) {
                 <div className="event_date">
                     {event.event_start_date}
                 </div>
+                <Likes eventId={event.id} />
             </div>
         </div>
     ));
 
-    return <div className="events-index-container">
-            <div className="index-header">
-            </div>
+    return (
+        <div className="events-index-container">
+            <div className="index-header"></div>
             <div className="index-panels-container">
                 <div className="index-panels-wrapper">
                     <div className="default-wrappa">
-                    {events}
+                        {events}
                     </div>
                 </div>
             </div>
         </div>
+    );
 }
 
 export default EventIndex;
-

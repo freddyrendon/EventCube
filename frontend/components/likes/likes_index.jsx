@@ -61,8 +61,11 @@ class LikeIndex extends React.Component {
 
         return (
             <div>
-                <button onClick={this.handleLikeToggle}>
-                    {this.state.isLiked ? "Unlike" : "Like"}
+                <button onClick={this.handleLikeToggle} style={{ background: "none", border: "none", cursor: "pointer" }}>
+                    {this.state.isLiked
+                        ? <i className="fas fa-heart" style={{ color: "red" }}></i>
+                        : <i className="far fa-heart"></i>
+                    }
                 </button>
                 <p>{likeCount} {likeCount === 1 ? "Like" : "Likes"}</p>
             </div>
