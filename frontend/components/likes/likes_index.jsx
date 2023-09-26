@@ -71,7 +71,7 @@ class LikeIndex extends React.Component {
                     }
                 </button>
 
-                <p>{likeCount} {likeCount === 1 ? "Like" : "Likes"}</p>
+                {/* <p>{likeCount} {likeCount === 1 ? "Like" : "Likes"}</p> */}
             </div>
         );
     }
